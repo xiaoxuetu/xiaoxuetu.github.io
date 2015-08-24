@@ -100,36 +100,36 @@ function os(e) {
     var os = '';
     if (e.match(/win/ig)) {
         if (e.match(/nt 5.1/ig)) {
-            os = '<span class="os_xp"><i class="fa fa-desktop"></i> Windows XP'
+            os = '<span class="os_xp"><i class="fa fa-desktop"></i> Windows XP '
         } else if (e.match(/nt 6.1/ig)) {
-            os = '<span class="os_7"><i class="fa fa-desktop"></i> Windows 7'
+            os = '<span class="os_7"><i class="fa fa-desktop"></i> Windows 7 '
         } else if (e.match(/nt 6.2/ig)) {
-            os = '<span class="os_8"><i class="fa fa-desktop"></i> Windows 8'
+            os = '<span class="os_8"><i class="fa fa-desktop"></i> Windows 8 '
         } else if (e.match(/nt 6.3/ig)) {
-            os = '<span class="os_8_1"><i class="fa fa-desktop"></i> Windows 8.1'
+            os = '<span class="os_8_1"><i class="fa fa-desktop"></i> Windows 8.1 '
         } else if (e.match(/nt 10.0/ig)) {
-            os = '<span class="os_8_1"><i class="fa fa-desktop"></i> Windows 10'
+            os = '<span class="os_8_1"><i class="fa fa-desktop"></i> Windows 10 '
         } else if (e.match(/nt 6.0/ig)) {
-            os = '<span class="os_vista"><i class="fa fa-desktop"></i> Windows Vista'
+            os = '<span class="os_vista"><i class="fa fa-desktop"></i> Windows Vista '
         } else if (e.match(/nt 5/ig)) {
-            os = '<span class="os_2000"><i class="fa fa-desktop"></i> Windows 2000'
+            os = '<span class="os_2000"><i class="fa fa-desktop"></i> Windows 2000 '
         } else {
-            os = '<span class="os_windows"><i class="fa fa-desktop"></i> Windows'
+            os = '<span class="os_windows"><i class="fa fa-desktop"></i> Windows '
         }
     } else if (e.match(/android/ig)) {
-        os = '<span class="os_android"><i class="fa fa-android"></i> Android'
+        os = '<span class="os_android"><i class="fa fa-android"></i> Android '
     } else if (e.match(/ubuntu/ig)) {
-        os = '<span class="os_ubuntu"><i class="fa fa-desktop"></i> Ubuntu'
+        os = '<span class="os_ubuntu"><i class="fa fa-desktop"></i> Ubuntu '
     } else if (e.match(/linux/ig)) {
-        os = '<span class="os_linux"><i class="fa fa-linux"></i> Linux'
+        os = '<span class="os_linux"><i class="fa fa-linux"></i> Linux '
     } else if (e.match(/mac/ig)) {
-        os = '<span class="os_mac"><i class="fa fa-desktop"></i> Mac OS X'
+        os = '<span class="os_mac"><i class="fa fa-desktop"></i> Mac OS X '
     } else if (e.match(/unix/ig)) {
-        os = '<span class="os_unix"><i class="fa fa-desktop"></i> Unix'
+        os = '<span class="os_unix"><i class="fa fa-desktop"></i> Unix '
     } else if (e.match(/symbian/ig)) {
-        os = '<span class="os_nokia"><i class="fa fa-mobile"></i> Nokia SymbianOS'
+        os = '<span class="os_nokia"><i class="fa fa-mobile"></i> Nokia SymbianOS '
     } else {
-        os = '<span class="os_other"><i class="fa fa-desktop"></i> 其它操作系统'
+        os = '<span class="os_other"><i class="fa fa-desktop"></i> 其它操作系统 '
     }
     return os + "</span>";
 }
