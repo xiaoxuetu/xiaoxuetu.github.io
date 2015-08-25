@@ -1145,15 +1145,6 @@ a {
   -ms-transition: background 0.3s;
   transition: background 0.3s;
 }
-
-.article-comment-link{
-  background: #3c3c3c;
-  color: #fff;
-  margin-top: 5px;
-  text-align: right;
-  font-size: 12px;
-}
-
 .article-more-link a:hover {
   background: #3c3c3c;
 }
