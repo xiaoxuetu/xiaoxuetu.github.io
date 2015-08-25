@@ -2283,6 +2283,9 @@ pre .css ~ * .id {
 .hide {
   display: none;
 }
+#article-comments-link {
+  display: none;
+}
 #viewer-box .viewer-list {
   margin: 0;
   padding: 0;
