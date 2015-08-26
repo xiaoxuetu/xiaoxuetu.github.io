@@ -252,6 +252,9 @@
           
             <a id="article-comment-link"  href="/2015/08/23/hello-world/#ds-thread" class="ds-thread-count comment-link " data-thread-key="hello-world" style="background:#E66F17;display:none;" data-count-type="comments"></a>
           
+          
+            <a id="article-share-link" data-url="http://xiaoxuetu.github.io/2015/08/23/hello-world/" data-id="cidt2o89d000072ycdfd4pwhn" class="article-share-link" style="background:#D42C43;" data-share="baidu" data-title="Hello World">立即分享</a>
+          
           <a  href="/2015/08/23/hello-world/#more">阅读全文 >></a>
         </p>
           
@@ -325,6 +328,35 @@
 
 <script src="/js/main.js" type="text/javascript"></script>
 
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<!-- 返回顶部按钮 -->
 
   <!-- Go to top -->
 <div id="totop" style="position:fixed;bottom:150px;right:160px;cursor: pointer;">

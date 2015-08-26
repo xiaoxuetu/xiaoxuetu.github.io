@@ -141,6 +141,8 @@ define([], function(){
 
 	var displayArticleDetail = function() {
 		$("#article-comment-link").hide();
+		$("#article-share-link").hide();
+		$("#totop").css("right", "50px");
 	}
 	
 	return{

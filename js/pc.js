@@ -89,7 +89,10 @@ define([], function(){
 	}
 
 	var showArticleDetail = function() {
-		$("#article-comment-link").show();
+		$("#article-share-link").css('display','inline');
+		$("#article-comment-link").css('display','inline');
+		$("#totop").css("right", "150px");
+
 	}
 
 
