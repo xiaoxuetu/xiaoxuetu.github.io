@@ -142,7 +142,6 @@ define([], function(){
 	var displayArticleDetail = function() {
 		$("#article-comment-link").hide();
 	}
-
 	
 	return{
 		init: function(){
