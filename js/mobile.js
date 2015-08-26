@@ -146,7 +146,6 @@ define([], function(){
 	
 	return{
 		init: function(){
-			displayArticleDetail();
 			//构造函数需要的参数
 			ctn = document.getElementsByClassName("slider-trigger")[0];
 			//构造四步
@@ -155,7 +154,7 @@ define([], function(){
 			combine();
 			bindDOM();
 			resetTags();
-
+			displayArticleDetail();
 		}
 	}
 })
