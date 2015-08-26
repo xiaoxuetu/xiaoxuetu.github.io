@@ -139,6 +139,7 @@ define([], function(){
 		}
 	}
 
+	
 	return{
 		init: function(){
 			//构造函数需要的参数
@@ -149,6 +150,7 @@ define([], function(){
 			combine();
 			bindDOM();
 			resetTags();
+
 		}
 	}
 })

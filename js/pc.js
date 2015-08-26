@@ -88,13 +88,17 @@ define([], function(){
 		});
 	}
 
-	
+	var showArticleDetail = function() {
+		$("#article-comment-link").show();
+	}
+
 
 	return {
 		init: function(){
 			resetTags();
 			bind();
 			Tips.init();
+			showArticleDetail();
 		}
 	}
 });
