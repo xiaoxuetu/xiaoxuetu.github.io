@@ -10,5 +10,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: /sitemap.xml
-Sitemap: /baidusitemap.xml
+Sitemap: http://xiaoxuetu.github.io/sitemap.xml
+Sitemap: http://xiaoxuetu.github.io/baidusitemap.xml
