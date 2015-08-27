@@ -194,6 +194,22 @@ a {
     width: 100%;
   }
 }
+.article-declaration {
+  color: #808080;
+  margin: 15px;
+  font-size: 15px;
+  text-align: left;
+  background: #f4f4f4;
+  display: block;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
 #container {
   position: relative;
   min-height: 100%;
