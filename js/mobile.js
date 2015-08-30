@@ -140,7 +140,21 @@ define([], function(){
 	}
 
 	var displayArticleDetail = function() {
-		$("#article-comment-link").hide();
+
+		var articleCommentLinkArray = $(".article-comment-link");
+
+		for (var i=0; i<articleCommentLinkArray.length; i++) {
+			var articleCommentLink = articleCommentLinkArray[i];
+			$(articleCommentLink).hide();
+		}
+
+		var articleShareLinkArray = $(".article-share-link");
+
+		for (var i=0; i<articleShareLinkArray.length; i++) {
+			var articleShareLink = articleShareLinkArray[i];
+			$(articleShareLink).hide();
+		}
+
 		$("#article-share-link").hide();
 		$("#totop").css("right", "50px");
 	}

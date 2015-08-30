@@ -89,8 +89,20 @@ define([], function(){
 	}
 
 	var showArticleDetail = function() {
-		$("#article-share-link").css('display','inline');
-		$("#article-comment-link").css('display','inline');
+		var articleShareLinkArray = $(".article-share-link");
+
+		for (var i=0; i<articleShareLinkArray.length; i++) {
+			var articleShareLink = articleShareLinkArray[i];
+			$(articleShareLink).css('display','inline');
+		}
+
+
+		var articleCommentLinkArray = $(".article-comment-link");
+
+		for (var i=0; i<articleCommentLinkArray.length; i++) {
+			var articleCommentLink = articleCommentLinkArray[i];
+			$(articleCommentLink).css('display','inline');
+		}
 		$("#totop").css("right", "150px");
 
 	}
