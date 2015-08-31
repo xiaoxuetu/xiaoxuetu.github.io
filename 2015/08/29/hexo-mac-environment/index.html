@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://xiaoxuetu.github.io/assets/blog_img/hexo-mac-environment/github_pages_themes.png">
 <meta property="og:image" content="http://xiaoxuetu.github.io/assets/blog_img/hexo-mac-environment/git_client_download.png">
 <meta property="og:image" content="http://xiaoxuetu.github.io/assets/blog_img/hexo-mac-environment/nodejs_download.png">
-<meta property="og:updated_time" content="2015-08-31T03:15:34.000Z">
+<meta property="og:updated_time" content="2015-08-31T04:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Hexo搭建个人博客－环境搭建篇">
 <meta name="twitter:description" content="我是一个爱写博客进行总结分享的人。然而，有着热爱写博客并且深知写博客好处的我，却没有好好的把这个习惯坚持下来。如今毕业已经一年多了吧，每一次与师弟师妹们聊天，我总会意味深长的建议他们，一定要定期梳理总结自身所学的知识，而写博客就是其中的一个很不错的方式……OK，感慨的话，就不多说了，下面我们开始慢慢的进入我们的主题－“利用Hexo搭建个人博客”吧。">
@@ -313,8 +313,23 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bash_profile</span><br><span class="line">$ npm --version</span><br></pre></td></tr></table></figure>
 <p>如果终端输出类似下面的内容，说明安装成功了</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.4</span>.<span class="number">28</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-3_环境搭建_-_Hexo">3.3 环境搭建 - Hexo</h4><p>执行以下命令进行Hexo框架的基本安装</p>
+<h4 id="3-3_环境搭建_-_Hexo">3.3 环境搭建 - Hexo</h4><p>1&gt; 执行以下命令进行Hexo框架的基本安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>2&gt; 安装便于自动部署到Github上的插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>3&gt; 安装atom生成插件，便于感兴趣的小伙伴们订阅</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+<p>4&gt; 安装博客首页生成插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure></p>
+<p>5&gt; 安装归档生成插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-archive --save</span><br></pre></td></tr></table></figure>
+<p>6&gt; 安装tag生成插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-tag --save</span><br></pre></td></tr></table></figure>
+<p>7&gt; 安装category生成插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-category --save</span><br></pre></td></tr></table></figure>
+<p>8&gt; 安装Sitemap文件生成插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>9&gt; 安装百度Sitemap文件生成插件，因为普通的Sitemap格式不符合百度的要求</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
 <h4 id="3-4_问题及解决方法">3.4 问题及解决方法</h4><p>这个小章节主要是个人在安装过程中遇到的问题以及解决方法, 也欢迎大家将遇到的问题添加到评论中，方便其他小伙伴在遇到的时候可以快速定位和解决</p>
 <p>1、 <strong>问题</strong>：在进行hexo-cli 或者 利用npm安装hexo其他相关组件的时候遇到<span style="background-color:#F79898;">shasum check failed</span>问题时改怎么办？</p>
 <p><strong>解决方法</strong>：执行以下命令切换到国内的镜像,重新执行npm进行组件安装即可</p>
