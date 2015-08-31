@@ -4,7 +4,7 @@
   <subtitle><![CDATA[挑战人生无极限，攀登人生更高峰]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiaoxuetu.github.io/"/>
-  <updated>2015-08-30T17:16:28.000Z</updated>
+  <updated>2015-08-31T03:15:34.000Z</updated>
   <id>http://xiaoxuetu.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://xiaoxuetu.github.io/2015/08/29/hexo-mac-environment/"/>
     <id>http://xiaoxuetu.github.io/2015/08/29/hexo-mac-environment/</id>
     <published>2015-08-29T08:54:11.000Z</published>
-    <updated>2015-08-30T17:16:28.000Z</updated>
+    <updated>2015-08-31T03:15:34.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/assets/blog_img/hexo-mac-environment/hexo_github.png" alt="图片来自网络"> </p>
 <p>我是一个爱写博客进行总结分享的人。<br>然而，有着热爱写博客并且深知写博客好处的我，却没有好好的把这个习惯坚持下来。如今毕业已经一年多了吧，每一次与师弟师妹们聊天，我总会意味深长的建议他们，一定要定期梳理总结自身所学的知识，而写博客就是其中的一个很不错的方式……<br>OK，感慨的话，就不多说了，下面我们开始慢慢的进入我们的主题－“利用Hexo搭建个人博客”吧。<br><a id="more"></a></p>
 <h2 id="1_前言">1 前言</h2><p>喜欢写博客的人都会经历这么三个阶段。</p>
@@ -41,7 +41,7 @@
 <p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
 </blockquote>
 <p>突然有一天，博客访问不到了，需要紧急处理；出来实习工作后，太忙了，没时间写博客，感觉投入产出比不高了……<br>慢慢的，小伙伴们发现独立博客虽然没有了免费空间的限制，但是管理、维护和金钱等各种成本太高了，于是有一大部分的朋友因为已经找到工作稳定了，慢慢的没有再写博客了；也有一部分同学开始去追寻能够保留控制权，而服务器等问题又能够交给别人处理，自己能够专心写博客的方式。<br>到了这个阶段，开始有朋友发现并且使用了Hexo + Github 的方式，而有着同样追求的我，也慢慢的跟着开始了这么一个历程～</p>
-<h2 id="2_介绍">2 介绍</h2><p>既然使用<font color="red">Hexo</font> + <font color="red">Github</font>搭建个人博客有那么多的好处，我们自然不能错过，事不宜迟，我们现在立马来认识一下，他们纠结是何方神圣吧。</p>
+<h2 id="2_介绍">2 介绍</h2><p>既然使用<font color="red">Hexo</font> + <font color="red">Github</font>搭建个人博客有那么多的好处，我们自然不能错过，事不宜迟，我们现在立马来认识一下，他们究竟是何方神圣吧。</p>
 <h4 id="2-1_关于_GitHub">2.1 关于 GitHub</h4><p><strong> 2.1.1 Github </strong></p>
 <p>接触编程一段时间后，相信大家都会开始了解到版本控制，如SVN、HG。是的，Github是一个知名的 <font color="red">分布式版本控制系统</font> 以及 <font color="red">开源代码库</font>。</p>
 <p>在本次博客搭建中，也是需要大家能够具备一定的Git版本控制知识的。大家放心，后文会对必须用到的命令进行讲解，但如果你想要对它有更详细的认知，可以在空余的时候参考以下链接：</p>
