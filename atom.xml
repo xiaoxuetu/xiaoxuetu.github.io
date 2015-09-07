@@ -4,7 +4,7 @@
   <subtitle><![CDATA[挑战人生无极限，攀登人生更高峰]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiaoxuetu.github.io/"/>
-  <updated>2015-09-07T17:00:29.000Z</updated>
+  <updated>2015-09-07T17:09:23.000Z</updated>
   <id>http://xiaoxuetu.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://xiaoxuetu.github.io/2015/09/06/hexo-issue/"/>
     <id>http://xiaoxuetu.github.io/2015/09/06/hexo-issue/</id>
     <published>2015-09-06T12:22:02.000Z</published>
-    <updated>2015-09-07T17:00:29.000Z</updated>
+    <updated>2015-09-07T17:09:23.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/assets/blog_img/hexo-issue/hexo_issue.png" alt="新品发布会-图片来自网络"></p>
 <p>通过 <a href="/2015/08/29/hexo-mac-environment/">《利用Hexo搭建个人博客－环境搭建篇》</a>  以及 <a href="/2015/08/31/hexo-guide/">《利用Hexo搭建个人博客－博客初始化篇》</a>，我们了解到了利用Hexo搭建个人博客需要的环境以及配置，下面这篇文章将会介绍如何把我们的博文发布到github上。</p>
 <a id="more"></a>
@@ -83,8 +83,12 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git                                                      # 设置发布类型，如git     </span><br><span class="line">  repository: git@github.com:xiaoxuetu/xiaoxuetu.github.io.git   # 设置repository对应的链接</span><br><span class="line">  branch: master                                                 # 设置提交到的分支</span><br><span class="line">  message: Site updated at &#123;&#123; now("YYYY-MM-DD HH:mm:ss") &#125;&#125;      # 设置我们提交的信息</span><br></pre></td></tr></table></figure>
 <h4 id="2-2_发布">2.2 发布</h4><p><strong> 1&gt; </strong> 执行以下命令生成博客的静态页面</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g    <span class="comment"># 等同于 hexo generate, g 就是 generate 的缩写</span></span><br></pre></td></tr></table></figure>
-<p><strong> 2&gt; </strong> 执行以下命令将我们生成的博客静态页面上传到GitHub<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d    <span class="comment"># 等同于 hexo deploy, d 就是 deploy 的缩写</span></span><br></pre></td></tr></table></figure></p>
+<p><strong> 2&gt; </strong> 执行以下命令将我们生成的博客静态页面上传到GitHub</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d    <span class="comment"># 等同于 hexo deploy, d 就是 deploy 的缩写</span></span><br></pre></td></tr></table></figure>
 <p><strong> 3&gt; </strong> 打开浏览器访问 <code>username.github.io</code> 即可访问我们刚部署到Github上的博客啦，比如我的就是 <code>xiaoxuetu.github.io</code> </p>
+<p>以后如果我们再次添加了一篇新的博客，我们只要继续按照上面 <code>第 1 步</code> <code>第 2 步</code> 进行生成静态页面、部署到GitHub上即可。</p>
+<p>如果有遇到一些资源不对或者其他问题时，可以尝试执行以下命令清除已经生成的静态文件，再重新执行上面的 <code>第 1 步</code> <code>第 2 步</code> 即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean    <span class="comment"># 删除已经生成的静态页面</span></span><br></pre></td></tr></table></figure>
 <h2 id="3_结束语">3 结束语</h2><p>至此，我们已经顺利地利用Hexo搭建了属于我们自己的个人博客啦～ 大家一定要积极多发表原创作品哦！</p>
 <p><br><br></p>
 ]]></content>
