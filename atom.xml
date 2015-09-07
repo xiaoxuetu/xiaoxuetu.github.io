@@ -4,7 +4,7 @@
   <subtitle><![CDATA[挑战人生无极限，攀登人生更高峰]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiaoxuetu.github.io/"/>
-  <updated>2015-09-05T12:45:21.000Z</updated>
+  <updated>2015-09-07T17:00:29.000Z</updated>
   <id>http://xiaoxuetu.github.io/</id>
   
   <author>
@@ -13,6 +13,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[利用Hexo搭建个人博客－博客发布篇]]></title>
+    <link href="http://xiaoxuetu.github.io/2015/09/06/hexo-issue/"/>
+    <id>http://xiaoxuetu.github.io/2015/09/06/hexo-issue/</id>
+    <published>2015-09-06T12:22:02.000Z</published>
+    <updated>2015-09-07T17:00:29.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/assets/blog_img/hexo-issue/hexo_issue.png" alt="新品发布会-图片来自网络"></p>
+<p>通过 <a href="/2015/08/29/hexo-mac-environment/">《利用Hexo搭建个人博客－环境搭建篇》</a>  以及 <a href="/2015/08/31/hexo-guide/">《利用Hexo搭建个人博客－博客初始化篇》</a>，我们了解到了利用Hexo搭建个人博客需要的环境以及配置，下面这篇文章将会介绍如何把我们的博文发布到github上。</p>
+<a id="more"></a>
+<h2 id="1_GitHub_配置">1 GitHub 配置</h2><p>在<a href="/2015/08/29/hexo-mac-environment/">《利用Hexo搭建个人博客－环境搭建篇》</a>一文中，我们对Github有了一个基本的了解，并且已经在本地搭建好了git的基本环境。如果想要发布博文到github上，我们还需要到github上去进行用户的注册。</p>
+<h4 id="1-1_注册GitHub">1.1 注册GitHub</h4><p>链接: <a href="https://github.com/" target="_blank" rel="external">点击访问</a></p>
+<p><strong> 1&gt; </strong> 点击访问上述链接，如下图点入用户名、邮箱、密码，点击 <code>Sign up for GitHub</code> 按钮进入下一步</p>
+<p><img src="/assets/blog_img/hexo-issue/github_register.png" alt="注册GitHub"></p>
+<p><strong> 2&gt; </strong> 如图，选择红色方框中的免费模式，当然如果你有其他需求也可以选择付费的其他模式，点击 <code>Finish sign up</code> 完成注册</p>
+<p><img src="/assets/blog_img/hexo-issue/github_choose_plan.png" alt="选择GitHub模式"></p>
+<p><strong> 3&gt; </strong> 完成上述步骤后,你的注册邮箱将会收到一封来自GitHub的验证邮件, 登陆邮箱点击访问邮件中的邮件链接进行验证。<br>   如果你没有收到激活邮件，可以按照下面的步骤说明和图片进行操作：</p>
+<ul>
+<li>a&gt; 点击 <code>1</code> 标注处的下拉菜单， 选择 <code>Setting</code> </li>
+<li>b&gt; 点击 <code>2</code> 标注处的 <code>Emails</code>  </li>
+<li>c&gt; 点击 <code>3</code> 标注处的 <code>Resend</code> 重新发送验证邮件 </li>
+</ul>
+<p><img src="/assets/blog_img/hexo-issue/github_active_email.png" alt="重发邮箱验证邮件"></p>
+<h4 id="1-2_添加SSH_Key">1.2 添加SSH Key</h4><p>注册完以后，为了让我们的电脑能直接免密码通过SSH访问GitHub，需要将我们的SSH Key添加到GitHub上。<br>首先我们需要打开终端，跟着下面的步骤进行操作即可。</p>
+<p><strong> 1&gt; </strong> 执行以下命令，检查我们的终端是否已经存在SSH Key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -al ~/.ssh</span><br></pre></td></tr></table></figure>
+<p>如果你的电脑已经存在SSH Key，终端将会显示如下图所示的内容, 此时可以跳过 <code>第2步</code> 直接到 <code>第3步</code> 。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xiaoxuetu:~ kevin$ ls -al ~/.ssh/</span><br><span class="line">total <span class="number">80</span></span><br><span class="line">drwx------   <span class="number">9</span> kevin  staff    <span class="number">306</span> Aug <span class="number">23</span> <span class="number">23</span>:<span class="number">51</span> .</span><br><span class="line">drwxr-xr-x+ <span class="number">45</span> kevin  staff   <span class="number">1530</span> Sep  <span class="number">4</span> <span class="number">00</span>:<span class="number">28</span> ..</span><br><span class="line">-rw-------   <span class="number">1</span> kevin  staff   <span class="number">1679</span> Aug  <span class="number">9</span>  <span class="number">2014</span> id_rsa</span><br><span class="line">-rw-r--r--   <span class="number">1</span> kevin  staff    <span class="number">399</span> Aug  <span class="number">9</span>  <span class="number">2014</span> id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p><strong> 2&gt; </strong> 执行以下命令生成 SSH Key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b <span class="number">4096</span> -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意<br>我们推荐使用默认的配置，所以接下来如果提示<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/you/.ssh/id_rsa): [Press enter]`</span><br></pre></td></tr></table></figure></p>
+<p>或者<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): [Type a passphrase]</span><br><span class="line"><span class="comment"># Enter same passphrase again: [Type passphrase again]</span></span><br></pre></td></tr></table></figure></p>
+<font color="red"> 我们都直接按Enter键即可 </font>
+
+</blockquote>
+<p><strong> 3&gt; </strong> 添加SSH Key 到 ssh-agent 中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">eval</span> <span class="string">"<span class="variable">$(ssh-agent -s)</span>"</span></span><br><span class="line">$ ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></p>
+<p><strong> 4&gt; </strong> 复制SSH Key 到 剪贴板中</p>
+<ul>
+<li><p>a&gt; 方式1: 使用pbcopy命令，如果你的电脑不支持该命令，可以使用方式二</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pbcopy &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>b&gt; 方式2: 先使用cat命令读取展现内容到终端，选择终端展现出来的SSH Key复制</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong> 5&gt; </strong> 添加我们刚才复制的SSH Key到账户中</p>
+<ul>
+<li>a&gt; 点击 <code>1</code> 标注处的下拉菜单， 选择 <code>Setting</code> </li>
+<li>b&gt; 点击 <code>2</code> 标注处的 <code>SSH Keys</code>  </li>
+<li>c&gt; 点击 <code>3</code> 标注处的 <code>Add SSH Key</code> ， 这个时候回出现 <code>3</code> 所标注区域的内容</li>
+<li>d&gt; <code>Title</code> 处我们可以根据我们的规范随便命名，另外，将我们刚刚复制的 SSH Key 复制到 <code>Key</code> 中</li>
+<li>e&gt; 点击 <code>5</code> 标注处的 <code>Add Key</code> 保存</li>
+</ul>
+<p><img src="/assets/blog_img/hexo-issue/github_add_ssh_key.png" alt="添加SSH Key到账户中"></p>
+<p><strong> 6&gt; </strong> 执行以下命令验证SSH Key是否添加成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>执行的时候终端会提示以下内容，我们直接输入yes即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established.</span><br><span class="line"># RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line"># Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+<p>如果添加成功了，终端将会输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hi username! You<span class="string">'ve successfully authenticated, but GitHub does not</span><br><span class="line"># provide shell access.</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-3_新建Repository">1.3 新建Repository</h4><p>最后，我们需要创建一个Repository进行我们的博客托管，这个Repository的命名必须遵循以下规范<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username<span class="class">.github</span><span class="class">.io</span></span><br></pre></td></tr></table></figure></p>
+<p>例如，我的用户名是xiaoxuetu，那么我的这个Repository名字就必须是 <code>xiaoxuetu.github.io</code> </p>
+<p><img src="/assets/blog_img/hexo-issue/github_new_repository.png" alt="创建Repository"></p>
+<p>至此，我们关于GitHub的配置已经完成。</p>
+<h2 id="2_Hexo_配置">2 Hexo 配置</h2><p>为了让我们能够方便的将博客部署到GitHub中，Hexo提供了 <code>hexo-deployer-git</code> 组件，下面我们来进行简单的说明。</p>
+<h4 id="2-1_配置Deploy插件">2.1 配置Deploy插件</h4><p>1&gt; 打开我们的博客根目录下的 <code>_config.yml</code> 文件，设置deploy的信息，注意要讲repository的链接替换成你所见的repository对应的链接</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git                                                      # 设置发布类型，如git     </span><br><span class="line">  repository: git@github.com:xiaoxuetu/xiaoxuetu.github.io.git   # 设置repository对应的链接</span><br><span class="line">  branch: master                                                 # 设置提交到的分支</span><br><span class="line">  message: Site updated at &#123;&#123; now("YYYY-MM-DD HH:mm:ss") &#125;&#125;      # 设置我们提交的信息</span><br></pre></td></tr></table></figure>
+<h4 id="2-2_发布">2.2 发布</h4><p><strong> 1&gt; </strong> 执行以下命令生成博客的静态页面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g    <span class="comment"># 等同于 hexo generate, g 就是 generate 的缩写</span></span><br></pre></td></tr></table></figure>
+<p><strong> 2&gt; </strong> 执行以下命令将我们生成的博客静态页面上传到GitHub<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d    <span class="comment"># 等同于 hexo deploy, d 就是 deploy 的缩写</span></span><br></pre></td></tr></table></figure></p>
+<p><strong> 3&gt; </strong> 打开浏览器访问 <code>username.github.io</code> 即可访问我们刚部署到Github上的博客啦，比如我的就是 <code>xiaoxuetu.github.io</code> </p>
+<h2 id="3_结束语">3 结束语</h2><p>至此，我们已经顺利地利用Hexo搭建了属于我们自己的个人博客啦～ 大家一定要积极多发表原创作品哦！</p>
+<p><br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/assets/blog_img/hexo-issue/hexo_issue.png" alt="新品发布会-图片来自网络"></p>
+<p>通过 <a href="/2015/08/29/hexo-mac-environment/">《利用Hexo搭建个人博客－环境搭建篇》</a>  以及 <a href="/2015/08/31/hexo-guide/">《利用Hexo搭建个人博客－博客初始化篇》</a>，我们了解到了利用Hexo搭建个人博客需要的环境以及配置，下面这篇文章将会介绍如何把我们的博文发布到github上。</p>]]>
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://xiaoxuetu.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[利用Hexo搭建个人博客－博客初始化篇]]></title>
