@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xiaoxuetu.github.io/love/love.html</loc>
+    <lastmod>2015-10-13T14:45:32.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/love/love/default.css</loc>
+    <lastmod>2015-10-13T14:36:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/love/love/functions.js</loc>
+    <lastmod>2015-10-13T14:35:53.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/2015/09/26/shiro-introduces/</loc>
+    <lastmod>2015-09-26T09:05:43.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://xiaoxuetu.github.io/2015/09/06/hexo-issue/</loc>
     <lastmod>2015-09-07T17:09:23.000Z</lastmod>
   </url>
@@ -29,6 +49,31 @@
   <url>
     <loc>http://xiaoxuetu.github.io/assets/font-awesome/css/font-awesome.css</loc>
     <lastmod>2015-01-22T05:52:32.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/love/love/moment.min.js</loc>
+    <lastmod>2014-09-24T10:48:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/love/love/garden.js</loc>
+    <lastmod>2014-01-28T14:31:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/love/love/gg_bd_ad_720x90.js</loc>
+    <lastmod>2014-01-28T14:31:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/love/love/jquery.js</loc>
+    <lastmod>2014-01-28T14:31:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/love/love/show_ads.js</loc>
+    <lastmod>2014-01-28T14:31:56.000Z</lastmod>
   </url>
   
 </urlset>

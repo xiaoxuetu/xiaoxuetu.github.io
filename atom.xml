@@ -4,7 +4,7 @@
   <subtitle><![CDATA[挑战人生无极限，攀登人生更高峰]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiaoxuetu.github.io/"/>
-  <updated>2015-09-07T17:09:23.000Z</updated>
+  <updated>2015-09-26T09:05:43.000Z</updated>
   <id>http://xiaoxuetu.github.io/</id>
   
   <author>
@@ -13,6 +13,21 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[shiro-introduces]]></title>
+    <link href="http://xiaoxuetu.github.io/2015/09/26/shiro-introduces/"/>
+    <id>http://xiaoxuetu.github.io/2015/09/26/shiro-introduces/</id>
+    <published>2015-09-26T09:02:03.000Z</published>
+    <updated>2015-09-26T09:05:43.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="shiro" scheme="http://xiaoxuetu.github.io/tags/shiro/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[利用Hexo搭建个人博客－博客发布篇]]></title>

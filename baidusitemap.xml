@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+    
+    
+    
+  <url>
+    <loc>http://xiaoxuetu.github.io/2015/09/26/shiro-introduces/</loc>
+    <lastmod>2015-09-26T09:05:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>shiro-introduces</title>
+        <pubTime>2015-09-26T09:02:03.000Z</pubTime>
+        
+        <tag>shiro </tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://xiaoxuetu.github.io/2015/09/06/hexo-issue/</loc>
     <lastmod>2015-09-07T17:09:23.000Z</lastmod>
@@ -69,6 +89,11 @@
     </data>
     </url>
 
+    
+    
+    
+    
+    
     
     
 </urlset>
