@@ -2,28 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xiaoxuetu.github.io/2015/11/19/mysql-environment/</loc>
+    <lastmod>2015-11-19T16:08:40.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://xiaoxuetu.github.io/2015/11/08/staff-level-2015/</loc>
-    <lastmod>2015-11-09T04:44:53.000Z</lastmod>
+    <lastmod>2015-11-19T12:53:24.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/2015/09/06/hexo-issue/</loc>
+    <lastmod>2015-11-19T12:52:53.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/2015/08/31/hexo-guide/</loc>
+    <lastmod>2015-11-19T12:52:43.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://xiaoxuetu.github.io/2015/08/29/hexo-mac-environment/</loc>
+    <lastmod>2015-11-19T12:52:20.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://xiaoxuetu.github.io/2015/09/26/shiro-introduces/</loc>
     <lastmod>2015-11-08T15:14:57.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://xiaoxuetu.github.io/2015/09/06/hexo-issue/</loc>
-    <lastmod>2015-09-07T17:09:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://xiaoxuetu.github.io/2015/08/31/hexo-guide/</loc>
-    <lastmod>2015-09-05T12:45:21.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://xiaoxuetu.github.io/2015/08/29/hexo-mac-environment/</loc>
-    <lastmod>2015-08-31T15:24:52.000Z</lastmod>
   </url>
   
   <url>

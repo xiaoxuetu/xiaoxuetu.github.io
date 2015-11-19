@@ -4,7 +4,7 @@
   <subtitle><![CDATA[挑战人生无极限，攀登人生更高峰]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiaoxuetu.github.io/"/>
-  <updated>2015-11-09T04:44:53.000Z</updated>
+  <updated>2015-11-19T16:08:40.000Z</updated>
   <id>http://xiaoxuetu.github.io/</id>
   
   <author>
@@ -15,11 +15,100 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[MySQL入门学习-环境搭建]]></title>
+    <link href="http://xiaoxuetu.github.io/2015/11/19/mysql-environment/"/>
+    <id>http://xiaoxuetu.github.io/2015/11/19/mysql-environment/</id>
+    <published>2015-11-19T12:51:48.000Z</published>
+    <updated>2015-11-19T16:08:40.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/assets/blog_img/mysql-environment/mysql-logo.png" alt="图片来自网络－MySQL LOGO"><br>众所周知，数据库是存放数据的仓库。为了方便数据的存储和管理，将数据按照特定的规律存储在磁盘上。通过数据库管理系统，我们可以有效的组织和管理存储在数据库中的数据。<br>目前，市面上比较流行的数据库有Oracle、MySQL等等。下面，我们将会跟大家一起学习关于MySQL的基本知识。<br><a id="more"></a></p>
+<h2 id="1_MySQL_环境搭建">1 MySQL 环境搭建</h2><p>本篇文章将会以Mac系统为例子进行安装和环境配置。</p>
+<h4 id="1-1_MySQL的安装及环境配置">1.1 MySQL的安装及环境配置</h4><p><strong> 1&gt; 下载及安装 </strong></p>
+<p>下载地址：<a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/</a></p>
+<p>点击上面的链接跳转到下载页面，根据你的系统以及版本，选择适合你电脑的安装包。比如我的是Mac OSX 10.10，所以我选择Mac OSX 并且下载了10.10版本的DMG安装包。如下图:<br><img src="/assets/blog_img/mysql-environment/mysql-download.png" alt="MySQL 下载指南"></p>
+<p>下载完成后，双击并且按照引导进行安装， <font color="red">安装完成后，系统会提示一个随机密码，我们要注意保存下来</font></p>
+<p><strong> 2&gt; 配置环境变量 </strong> </p>
+<p>我们会发现通过DMG安装的MySQL的目录在 <code>/usr/local/mysql</code> , 接下来打开 <code>$HOME</code> 目录下的 <code>.bash_profile</code> 文件，并且配置以下环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LC_ALL=en_US.UTF-<span class="number">8</span></span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-<span class="number">8</span></span><br><span class="line"><span class="built_in">export</span> MYSQL_HOME=<span class="string">"/usr/local/mysql"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;MYSQL_HOME&#125;</span>/bin</span><br></pre></td></tr></table></figure>
+<p>配置完成并且保存后，执行以下命令加载配置文件使其立即在当前终端生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> .bash_profile</span><br></pre></td></tr></table></figure></p>
+<p><strong> 3&gt; 修改密码 </strong><br>执行以下命令，输入第一步安装的时候生成的随机密码进入MySQL</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>进入MySQL后，你执行任何操作，它都会提示你修改初始密码后才能进行操作的，所以执行以下命令进行密码修改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SET PASSWORD = PASSWORD(<span class="string">"你的密码"</span>);</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="1-2_mycli_的安装及配置">1.2 mycli 的安装及配置</h4><p>mycli 可以自动补齐输入和语法高亮的MySQL的开源命令行接口，除了MySQL以外，它还支持MariaDB 和 Percona。效果图如下：<br><img src="/assets/blog_img/mysql-environment/mycli-effect.gif" alt="图片来自网络"></p>
+<p><strong> 1&gt; 通过 pip 或者 easy_install 进行安装 </strong><br>如果你的电脑已经安装了 pip 或者 easy_install， 我们将可以使用以下方式进行安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install mycli</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo easy_install mycli</span><br></pre></td></tr></table></figure></p>
+<p><br>  </p>
+<p><strong> 2&gt; Mac 下使用brew进行安装 </strong><br>在mac下，如果你安装了pip 或者 easy_install， 你也可以直接使用第一种方式进行安装，否则你需要先执行以下命令进行brew进行安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+<p>如果你已经安装了brew，则可以跳过这个步骤，直接执行以下命令安装 mycli</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew update &amp;&amp; brew install mycli</span><br></pre></td></tr></table></figure>
+<p><br>  </p>
+<p><strong> 3&gt; Linux 的安装方式 </strong></p>
+<p>参考链接: <a href="http://mycli.net/install" target="_blank" rel="external">http://mycli.net/install</a></p>
+<h2 id="2_MySQL_数据库常用操作">2 MySQL 数据库常用操作</h2><p>本章节中主要介绍数据库的服务启动、终止、版本查询、提示符修改等相关命令</p>
+<h4 id="2-1_服务启动命令">2.1 服务启动命令</h4><p>下面将会按照平台进行讲解</p>
+<p><strong> 1&gt; Window </strong><br>启动: <code>net start mysql</code><br>停止: <code>net stop mysql</code> </p>
+<p><strong> 2&gt; Ubuntu </strong><br>启动: <code>sudo service mysql start</code><br>停止: <code>sudo service mysql stop</code><br>重启: <code>sudo service mysql restart</code></p>
+<p><strong> 2&gt; Mac OSX</strong><br>启动: <code>sudo /usr/local/mysql/support-files/mysql.server start</code><br>停止: <code>sudo /usr/local/mysql/support-files/mysql.server stop</code><br>重启: <code>sudo /usr/local/mysql/support-files/mysql.server restart</code> </p>
+<h4 id="2-2_MySQL_版本查询">2.2 MySQL 版本查询</h4><p>MySQL的版本查询总共有2种</p>
+<p>1&gt; 方式1:<br>直接在终端执行命令 <code>mysql --version</code> </p>
+<p>2&gt; 方式2:<br>先登陆mysql，执行以下SQL语句：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT VERSION();</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-3_MySQL_提示符修改">2.3 MySQL 提示符修改</h4><p>MySQL 默认的提示符是 <code>mysql&gt;</code> ，以下的修改方式都只对当前的登陆的mysql客户端有效，如果我们退出重新登录，提示符将会变回默认的 <code>mysql&gt;</code></p>
+<p>1&gt; 方式1: 在登陆mysql的同时使用 <code>--prompt</code> 进行修改，如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -uroot --prompt \u@\h&gt;  -p</span><br><span class="line"><span class="comment"># 输入密码进去后，将会发现MySQL的提示符变成了 root@localhost&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2&gt; 方式2: 进入MySQL后，使用 <code>PROMPT</code> 指令修改提示符<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; PROMPT \u@\h&gt;</span><br><span class="line"><span class="comment"># 输入密码进去后，将会发现MySQL的提示符变成了 root@localhost&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>接下来解释一下上面提到的 <code>\u</code> 和 <code>\h</code> 的含义</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\D</td>
+<td>完整的日期</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>当前数据库</td>
+</tr>
+<tr>
+<td>\h</td>
+<td>服务器名称</td>
+</tr>
+<tr>
+<td>\u</td>
+<td>当前用户</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-4_退出数据库">2.4 退出数据库</h4><p>在MySQL中执行以下命令都可以推出当前客户端</p>
+<p>1&gt; <code>quit</code><br>2&gt; <code>exit</code><br>3&gt; <code>\q</code> </p>
+<h4 id="2-5_其它命令">2.5 其它命令</h4><p>1&gt; 查看当前时间</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT NOW();</span><br></pre></td></tr></table></figure>
+<p>2&gt; 查看当前用户</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT USER();</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/assets/blog_img/mysql-environment/mysql-logo.png" alt="图片来自网络－MySQL LOGO"><br>众所周知，数据库是存放数据的仓库。为了方便数据的存储和管理，将数据按照特定的规律存储在磁盘上。通过数据库管理系统，我们可以有效的组织和管理存储在数据库中的数据。<br>目前，市面上比较流行的数据库有Oracle、MySQL等等。下面，我们将会跟大家一起学习关于MySQL的基本知识。<br>]]>
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://xiaoxuetu.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[2015年职级评定总结]]></title>
     <link href="http://xiaoxuetu.github.io/2015/11/08/staff-level-2015/"/>
     <id>http://xiaoxuetu.github.io/2015/11/08/staff-level-2015/</id>
     <published>2015-11-07T17:11:42.000Z</published>
-    <updated>2015-11-09T04:44:53.000Z</updated>
+    <updated>2015-11-19T12:53:24.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/assets/blog_img/staff-level-2015/staff-level-2015.jpg" alt="图片来自网络"></p>
 <p>在昨天进行了职业生涯中的第一次职级评定，让人感到紧张的同时却又觉得刺激、兴奋。<br>现在回想起来，虽然对自己当时的表现和回答不是特别满意，但是不管结果怎样，还是希望自己不要气馁，要继续努力。<br>为了能够快速的让自己快速成长并且能够给予后人一些经验，所以还是做了以下总结。  </p>
 <a id="more"></a> 
@@ -86,7 +175,7 @@
     <link href="http://xiaoxuetu.github.io/2015/09/06/hexo-issue/"/>
     <id>http://xiaoxuetu.github.io/2015/09/06/hexo-issue/</id>
     <published>2015-09-06T12:22:02.000Z</published>
-    <updated>2015-09-07T17:09:23.000Z</updated>
+    <updated>2015-11-19T12:52:53.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/assets/blog_img/hexo-issue/hexo_issue.png" alt="新品发布会-图片来自网络"></p>
 <p>通过 <a href="/2015/08/29/hexo-mac-environment/">《利用Hexo搭建个人博客－环境搭建篇》</a>  以及 <a href="/2015/08/31/hexo-guide/">《利用Hexo搭建个人博客－博客初始化篇》</a>，我们了解到了利用Hexo搭建个人博客需要的环境以及配置，下面这篇文章将会介绍如何把我们的博文发布到github上。</p>
 <a id="more"></a>
@@ -174,7 +263,7 @@
     <link href="http://xiaoxuetu.github.io/2015/08/31/hexo-guide/"/>
     <id>http://xiaoxuetu.github.io/2015/08/31/hexo-guide/</id>
     <published>2015-08-31T15:14:58.000Z</published>
-    <updated>2015-09-05T12:45:21.000Z</updated>
+    <updated>2015-11-19T12:52:43.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/assets/blog_img/hexo-guide/hexo_hello_world.png" alt="图片来自网络"><br>上一篇博文 <a href="/2015/08/29/hexo-mac-environment/">《利用Hexo搭建个人博客－环境搭建篇》</a> 中，我们讲解了利用Hexo搭建个人博客应该要配置哪些环境。<br>相信大家已经迫不及待的想要知道接下来应该要怎么把自己的博客搭起来了，下面，让我们一起见证这奇迹的时刻。</p>
 <a id="more"></a>
 <h2 id="1_初始化博客">1 初始化博客</h2><p>首先，我们需要按照下面的步骤进行博客的初始化：</p>
@@ -289,7 +378,7 @@
     <link href="http://xiaoxuetu.github.io/2015/08/29/hexo-mac-environment/"/>
     <id>http://xiaoxuetu.github.io/2015/08/29/hexo-mac-environment/</id>
     <published>2015-08-29T08:54:11.000Z</published>
-    <updated>2015-08-31T15:24:52.000Z</updated>
+    <updated>2015-11-19T12:52:20.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/assets/blog_img/hexo-mac-environment/hexo_github.png" alt="图片来自网络"> </p>
 <p>我是一个爱写博客进行总结分享的人。<br>然而，有着热爱写博客并且深知写博客好处的我，却没有好好的把这个习惯坚持下来。如今毕业已经一年多了吧，每一次与师弟师妹们聊天，我总会意味深长的建议他们，一定要定期梳理总结自身所学的知识，而写博客就是其中的一个很不错的方式……<br>OK，感慨的话，就不多说了，下面我们开始慢慢的进入我们的主题－“利用Hexo搭建个人博客”吧。<br><a id="more"></a></p>
 <h2 id="1_前言">1 前言</h2><p>喜欢写博客的人都会经历这么三个阶段。</p>

@@ -5,25 +5,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Shiro学习-介绍 | 小学徒的成长历程</title>
+  <title>MySQL入门学习-环境搭建 | 小学徒的成长历程</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="baidu-site-verification" content="4oUTRJ9VQC" />
   <meta name="google-site-verification" content="YtGwaDB5V9NqKBWVHprUY0m6Xn6WABn_7chjlZatd6M" />
 
   
-    <meta name="keywords" content="shiro-introduces,shiro,java,Java,开发者,程序猿,程序员,极客,编程,代码,开源,IT网站,Developer,Programmer,小学徒的成长历程，小学徒, 博客">
+    <meta name="keywords" content="mysql-environment, MySQL入门学习-环境搭建, MySQL, 环境搭建, mycli,Java,开发者,程序猿,程序员,极客,编程,代码,开源,IT网站,Developer,Programmer,小学徒的成长历程，小学徒, 博客">
   
 
-  <meta name="description" content="待更新…">
+  <meta name="description" content="众所周知，数据库是存放数据的仓库。为了方便数据的存储和管理，将数据按照特定的规律存储在磁盘上。通过数据库管理系统，我们可以有效的组织和管理存储在数据库中的数据。目前，市面上比较流行的数据库有Oracle、MySQL等等。下面，我们将会跟大家一起学习关于MySQL的基本知识。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shiro学习-介绍">
-<meta property="og:url" content="http://xiaoxuetu.github.io/2015/09/26/shiro-introduces/index.html">
+<meta property="og:title" content="MySQL入门学习-环境搭建">
+<meta property="og:url" content="http://xiaoxuetu.github.io/2015/11/19/mysql-environment/index.html">
 <meta property="og:site_name" content="小学徒的成长历程">
-<meta property="og:description" content="待更新…">
-<meta property="og:updated_time" content="2015-11-08T15:14:57.000Z">
+<meta property="og:description" content="众所周知，数据库是存放数据的仓库。为了方便数据的存储和管理，将数据按照特定的规律存储在磁盘上。通过数据库管理系统，我们可以有效的组织和管理存储在数据库中的数据。目前，市面上比较流行的数据库有Oracle、MySQL等等。下面，我们将会跟大家一起学习关于MySQL的基本知识。">
+<meta property="og:image" content="http://xiaoxuetu.github.io/assets/blog_img/mysql-environment/mysql-logo.png">
+<meta property="og:image" content="http://xiaoxuetu.github.io/assets/blog_img/mysql-environment/mysql-download.png">
+<meta property="og:image" content="http://xiaoxuetu.github.io/assets/blog_img/mysql-environment/mycli-effect.gif">
+<meta property="og:updated_time" content="2015-11-19T16:08:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shiro学习-介绍">
-<meta name="twitter:description" content="待更新…">
+<meta name="twitter:title" content="MySQL入门学习-环境搭建">
+<meta name="twitter:description" content="众所周知，数据库是存放数据的仓库。为了方便数据的存储和管理，将数据按照特定的规律存储在磁盘上。通过数据库管理系统，我们可以有效的组织和管理存储在数据库中的数据。目前，市面上比较流行的数据库有Oracle、MySQL等等。下面，我们将会跟大家一起学习关于MySQL的基本知识。">
   
     <link rel="alternative" href="/atom.xml" title="小学徒的成长历程" type="application/atom+xml">
   
@@ -208,11 +211,11 @@
 		</header>				
 	</div>
 </nav>
-        <div class="body-wrap"><article id="post-shiro-introduces" class="article article-type-post" itemscope itemprop="blogPost">
+        <div class="body-wrap"><article id="post-mysql-environment" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/09/26/shiro-introduces/" class="article-date">
-  	<time datetime="2015-09-26T09:02:03.000Z" itemprop="datePublished">2015-09-26</time>
+      <a href="/2015/11/19/mysql-environment/" class="article-date">
+  	<time datetime="2015-11-19T12:51:48.000Z" itemprop="datePublished">2015-11-19</time>
 </a>
     </div>
   
@@ -226,7 +229,7 @@
   
     <h1 class="article-title" itemprop="name">
       
-      Shiro学习-介绍
+      MySQL入门学习-环境搭建
     </h1>
   
 
@@ -235,7 +238,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
 	</div>
 
         
@@ -247,8 +250,79 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>待更新…</p>
-<a id="more"></a>
+        <p><img src="/assets/blog_img/mysql-environment/mysql-logo.png" alt="图片来自网络－MySQL LOGO"><br>众所周知，数据库是存放数据的仓库。为了方便数据的存储和管理，将数据按照特定的规律存储在磁盘上。通过数据库管理系统，我们可以有效的组织和管理存储在数据库中的数据。<br>目前，市面上比较流行的数据库有Oracle、MySQL等等。下面，我们将会跟大家一起学习关于MySQL的基本知识。<br><a id="more"></a></p>
+<h2 id="1_MySQL_环境搭建">1 MySQL 环境搭建</h2><p>本篇文章将会以Mac系统为例子进行安装和环境配置。</p>
+<h4 id="1-1_MySQL的安装及环境配置">1.1 MySQL的安装及环境配置</h4><p><strong> 1&gt; 下载及安装 </strong></p>
+<p>下载地址：<a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/</a></p>
+<p>点击上面的链接跳转到下载页面，根据你的系统以及版本，选择适合你电脑的安装包。比如我的是Mac OSX 10.10，所以我选择Mac OSX 并且下载了10.10版本的DMG安装包。如下图:<br><img src="/assets/blog_img/mysql-environment/mysql-download.png" alt="MySQL 下载指南"></p>
+<p>下载完成后，双击并且按照引导进行安装， <font color="red">安装完成后，系统会提示一个随机密码，我们要注意保存下来</font></p>
+<p><strong> 2&gt; 配置环境变量 </strong> </p>
+<p>我们会发现通过DMG安装的MySQL的目录在 <code>/usr/local/mysql</code> , 接下来打开 <code>$HOME</code> 目录下的 <code>.bash_profile</code> 文件，并且配置以下环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LC_ALL=en_US.UTF-<span class="number">8</span></span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-<span class="number">8</span></span><br><span class="line"><span class="built_in">export</span> MYSQL_HOME=<span class="string">"/usr/local/mysql"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;MYSQL_HOME&#125;</span>/bin</span><br></pre></td></tr></table></figure>
+<p>配置完成并且保存后，执行以下命令加载配置文件使其立即在当前终端生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> .bash_profile</span><br></pre></td></tr></table></figure></p>
+<p><strong> 3&gt; 修改密码 </strong><br>执行以下命令，输入第一步安装的时候生成的随机密码进入MySQL</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>进入MySQL后，你执行任何操作，它都会提示你修改初始密码后才能进行操作的，所以执行以下命令进行密码修改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SET PASSWORD = PASSWORD(<span class="string">"你的密码"</span>);</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="1-2_mycli_的安装及配置">1.2 mycli 的安装及配置</h4><p>mycli 可以自动补齐输入和语法高亮的MySQL的开源命令行接口，除了MySQL以外，它还支持MariaDB 和 Percona。效果图如下：<br><img src="/assets/blog_img/mysql-environment/mycli-effect.gif" alt="图片来自网络"></p>
+<p><strong> 1&gt; 通过 pip 或者 easy_install 进行安装 </strong><br>如果你的电脑已经安装了 pip 或者 easy_install， 我们将可以使用以下方式进行安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install mycli</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo easy_install mycli</span><br></pre></td></tr></table></figure></p>
+<p><br>  </p>
+<p><strong> 2&gt; Mac 下使用brew进行安装 </strong><br>在mac下，如果你安装了pip 或者 easy_install， 你也可以直接使用第一种方式进行安装，否则你需要先执行以下命令进行brew进行安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+<p>如果你已经安装了brew，则可以跳过这个步骤，直接执行以下命令安装 mycli</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew update &amp;&amp; brew install mycli</span><br></pre></td></tr></table></figure>
+<p><br>  </p>
+<p><strong> 3&gt; Linux 的安装方式 </strong></p>
+<p>参考链接: <a href="http://mycli.net/install" target="_blank" rel="external">http://mycli.net/install</a></p>
+<h2 id="2_MySQL_数据库常用操作">2 MySQL 数据库常用操作</h2><p>本章节中主要介绍数据库的服务启动、终止、版本查询、提示符修改等相关命令</p>
+<h4 id="2-1_服务启动命令">2.1 服务启动命令</h4><p>下面将会按照平台进行讲解</p>
+<p><strong> 1&gt; Window </strong><br>启动: <code>net start mysql</code><br>停止: <code>net stop mysql</code> </p>
+<p><strong> 2&gt; Ubuntu </strong><br>启动: <code>sudo service mysql start</code><br>停止: <code>sudo service mysql stop</code><br>重启: <code>sudo service mysql restart</code></p>
+<p><strong> 2&gt; Mac OSX</strong><br>启动: <code>sudo /usr/local/mysql/support-files/mysql.server start</code><br>停止: <code>sudo /usr/local/mysql/support-files/mysql.server stop</code><br>重启: <code>sudo /usr/local/mysql/support-files/mysql.server restart</code> </p>
+<h4 id="2-2_MySQL_版本查询">2.2 MySQL 版本查询</h4><p>MySQL的版本查询总共有2种</p>
+<p>1&gt; 方式1:<br>直接在终端执行命令 <code>mysql --version</code> </p>
+<p>2&gt; 方式2:<br>先登陆mysql，执行以下SQL语句：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT VERSION();</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-3_MySQL_提示符修改">2.3 MySQL 提示符修改</h4><p>MySQL 默认的提示符是 <code>mysql&gt;</code> ，以下的修改方式都只对当前的登陆的mysql客户端有效，如果我们退出重新登录，提示符将会变回默认的 <code>mysql&gt;</code></p>
+<p>1&gt; 方式1: 在登陆mysql的同时使用 <code>--prompt</code> 进行修改，如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -uroot --prompt \u@\h&gt;  -p</span><br><span class="line"><span class="comment"># 输入密码进去后，将会发现MySQL的提示符变成了 root@localhost&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2&gt; 方式2: 进入MySQL后，使用 <code>PROMPT</code> 指令修改提示符<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; PROMPT \u@\h&gt;</span><br><span class="line"><span class="comment"># 输入密码进去后，将会发现MySQL的提示符变成了 root@localhost&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>接下来解释一下上面提到的 <code>\u</code> 和 <code>\h</code> 的含义</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\D</td>
+<td>完整的日期</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>当前数据库</td>
+</tr>
+<tr>
+<td>\h</td>
+<td>服务器名称</td>
+</tr>
+<tr>
+<td>\u</td>
+<td>当前用户</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-4_退出数据库">2.4 退出数据库</h4><p>在MySQL中执行以下命令都可以推出当前客户端</p>
+<p>1&gt; <code>quit</code><br>2&gt; <code>exit</code><br>3&gt; <code>\q</code> </p>
+<h4 id="2-5_其它命令">2.5 其它命令</h4><p>1&gt; 查看当前时间</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT NOW();</span><br></pre></td></tr></table></figure>
+<p>2&gt; 查看当前用户</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT USER();</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
 
       
     </div>
@@ -269,18 +343,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/11/08/staff-level-2015/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          2015年职级评定总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/09/06/hexo-issue/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">利用Hexo搭建个人博客－博客发布篇</div>
+    <a href="/2015/11/08/staff-level-2015/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2015年职级评定总结</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -315,7 +380,7 @@
 
 <div class="duoshuo">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="shiro-introduces" data-title="Shiro学习-介绍" data-url="http://xiaoxuetu.github.io/2015/09/26/shiro-introduces/"></div>
+    <div class="ds-thread" data-thread-key="mysql-environment" data-title="MySQL入门学习-环境搭建" data-url="http://xiaoxuetu.github.io/2015/11/19/mysql-environment/"></div>
     <!-- 多说评论框 end -->
 </div>
 
