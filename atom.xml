@@ -4,7 +4,7 @@
   <subtitle><![CDATA[挑战人生无极限，攀登人生更高峰]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiaoxuetu.github.io/"/>
-  <updated>2015-11-19T16:08:40.000Z</updated>
+  <updated>2015-11-22T14:54:43.000Z</updated>
   <id>http://xiaoxuetu.github.io/</id>
   
   <author>
@@ -15,12 +15,100 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[MySQL入门学习-数据库基本操作]]></title>
+    <link href="http://xiaoxuetu.github.io/2015/11/22/mysql-database/"/>
+    <id>http://xiaoxuetu.github.io/2015/11/22/mysql-database/</id>
+    <published>2015-11-22T06:52:38.000Z</published>
+    <updated>2015-11-22T14:54:43.000Z</updated>
+    <content type="html"><![CDATA[<p>在<a href="/2015/11/19/mysql-environment/">《MySQL入门学习-环境搭建》</a>中，我们已经成功的安装了MySQL，并且学习了常用的MySQL操作命令，下面我们来学习关于数据库的基本操作。</p>
+<a id="more"></a>
+<h2 id="1_查看当前数据库">1 查看当前数据库</h2><p>执行以下命令，可以查看当前MySQL中所拥有的全部数据库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW DATABASES;</span><br></pre></td></tr></table></figure>
+<p>上面这条命令等价于</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW SCHEMAS;</span><br></pre></td></tr></table></figure>
+<p>在MySQL中， SCHEMAS 等价于 DATABASES。</p>
+<p>当然，我们也可以查看当前MySQL中名字符合某个规则的数据库，此时，我们按照以下的格式执行即可.</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW DATABASES <span class="preprocessor">[</span>LIKE <span class="string">'pattern'</span> | <span class="keyword">WHERE</span> expr<span class="preprocessor">]</span><span class="markup">;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：上面这条命令中，中括号 [] 括起来的表示是可选的，根据需要而出现。</p>
+</blockquote>
+<h2 id="2_默认数据库">2 默认数据库</h2><p>通过上面的命令，我们可以知道刚安装好的MySQL会有四个默认创建好了的数据库，他们的名字以及相关作用是：</p>
+<table>
+<thead>
+<tr>
+<th>数据库</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>infomation_schema</td>
+<td>虚拟库，保存当前MySQL服务器已有数据库和表的统计信息，不占用物理磁盘空间，其内的数据保存在系统内存里。</td>
+</tr>
+<tr>
+<td>mysql</td>
+<td>授权库，保存用户的授权信息，占用物理磁盘空间。</td>
+</tr>
+<tr>
+<td>perfomance_schema</td>
+<td>保存数据库服务器运行时的运行参数，占用物理磁盘空间</td>
+</tr>
+<tr>
+<td>test</td>
+<td>公共库，任意一个用户连接到数据库服务器后，对此库都拥有完全权限，占用物理磁盘空间。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-1_infomation_schema_中的数据表说明">2.1 infomation_schema 中的数据表说明</h4><p>infomation_schema 中会有很多的数据表，我们一起来看下这个数据库中部分数据表的作用：</p>
+<ul>
+<li><strong> SCHEMATA表 </strong> ： 提供了当前mysql实例中所有数据库的信息。我们执行 <code>SHOW DATABASES;</code> 的结果就是取自此表。</li>
+<li><strong> TABLES表 </strong>   ： 提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。我们执行 <code>SHOW TABLES FROM {数据库名称};</code> 的结果就是取自此表。</li>
+<li><strong> COLUMNS表 </strong>  ： 提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。我们执行 <code>SHOW COLUMNS FROM {数据库名称}.{数据表名称};</code> 的结果就是取自此表。</li>
+<li><strong> STATISTICS表 </strong> ： 提供了关于表索引的信息。我们执行 <code>SHOW INDEX FROM {数据库名称}.{数据表名称};</code> 的结果就是取自此表。</li>
+<li><strong> USER_PRIVILEGES（用户权限）表 </strong> ：给出了关于所有用户权限的信息。该信息源自mysql.user授权表。是非标准表。</li>
+<li><strong> SCHEMA_PRIVILEGES（方案权限）表 </strong> ：给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。</li>
+<li><strong> TABLE_PRIVILEGES（表权限）表 </strong> ：给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。</li>
+<li><strong> COLUMN_PRIVILEGES（列权限）表 </strong> ：给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。</li>
+<li><strong> CHARACTER_SETS（字符集）表 </strong> ：提供了mysql实例可用字符集的信息。我们执行 <code>SHOW CHARACTER SET;</code> 结果集就是取自此表。</li>
+<li><strong> COLLATIONS表 </strong> ：提供了关于各字符集的对照信息。</li>
+<li><strong> COLLATION_CHARACTER_SET_APPLICABILITY表 </strong> ：指明了可用于校对的字符集。这些列等效于 <code>SHOW COLLATION</code> 的前两个显示字段。</li>
+<li><strong> TABLE_CONSTRAINTS表 </strong> ：描述了存在约束的表。以及表的约束类型。</li>
+<li><strong> KEY_COLUMN_USAGE表 </strong> ：描述了具有约束的键列。</li>
+<li><strong> ROUTINES表 </strong> ：提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。</li>
+<li><strong> VIEWS表 </strong> ：给出了关于数据库中的视图的信息。需要有 <code>SHOW VIEWS</code> 权限，否则无法查看视图信息。</li>
+<li><strong> TRIGGERS表 </strong> ：提供了关于触发程序的信息。必须有super权限才能查看该表</li>
+</ul>
+<h2 id="3_查看当前所使用的数据库">3 查看当前所使用的数据库</h2><p>通过以下命令，我们可以查到当前我们正在使用的数据库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT DATABASE();</span><br></pre></td></tr></table></figure>
+<h2 id="4_创建数据库">4 创建数据库</h2><p>通过以下命令，我们可以创建一个新的数据库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE DATABASE [IF NOT EXISTS] &#123;数据库名称&#125; [DEFAULT] CHARACTER SET = [字符集名称]</span><br></pre></td></tr></table></figure>
+<p>例如，我们要创建一个名字为 xiaoxuetu 的数据库:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE DATABASE xiaoxuetu;</span><br></pre></td></tr></table></figure>
+<p>如果我们要创建一个名字为 xiaoxuetu 并且 字符编码为 UTF8 的数据库:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE DATABASE IF NOT EXISTS xiaoxuetu DEFAULT CHARACTER SET = UTF8;</span><br></pre></td></tr></table></figure>
+<h2 id="5_修改数据库">5 修改数据库</h2><p>执行以下命令可以更新数据库的全局特性, 目前在MySQL中，只能用于修改数据库字符集和校对规则名称：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER DATABASE &#123;数据库名称&#125;</span><br><span class="line">        [DEFAULT] CHARACTER SET &#123;字符集名称&#125;</span><br><span class="line">       |[DEFAULT] COLLATE &#123;校对规则名称&#125;</span><br></pre></td></tr></table></figure>
+<p>关于这方面，大家可以直接参考：<a href="http://www.kuqin.com/mysql5.1_doc/charset.html" target="_blank" rel="external">http://www.kuqin.com/mysql5.1_doc/charset.html</a></p>
+<h2 id="6_删除数据库">6 删除数据库</h2><p>通过以下命令，我们可以删除一个已经存在的数据库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; DROP DATABASE [IF EXISTS] &#123;数据库名称&#125;;</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在<a href="/2015/11/19/mysql-environment/">《MySQL入门学习-环境搭建》</a>中，我们已经成功的安装了MySQL，并且学习了常用的MySQL操作命令，下面我们来学习关于数据库的基本操作。</p>]]>
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://xiaoxuetu.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[MySQL入门学习-环境搭建]]></title>
     <link href="http://xiaoxuetu.github.io/2015/11/19/mysql-environment/"/>
     <id>http://xiaoxuetu.github.io/2015/11/19/mysql-environment/</id>
     <published>2015-11-19T12:51:48.000Z</published>
-    <updated>2015-11-19T16:08:40.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/assets/blog_img/mysql-environment/mysql-logo.png" alt="图片来自网络－MySQL LOGO"><br>众所周知，数据库是存放数据的仓库。为了方便数据的存储和管理，将数据按照特定的规律存储在磁盘上。通过数据库管理系统，我们可以有效的组织和管理存储在数据库中的数据。<br>目前，市面上比较流行的数据库有Oracle、MySQL等等。下面，我们将会跟大家一起学习关于MySQL的基本知识。<br><a id="more"></a></p>
+    <updated>2015-11-22T13:05:01.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/assets/blog_img/mysql-environment/mysql-logo.png" alt="图片来自网络－MySQL LOGO"><br>众所周知，数据库是存放数据的仓库。为了方便数据的存储和管理，将数据按照特定的规律存储在磁盘上。通过数据库管理系统，我们可以有效的组织和管理存储在数据库中的数据。<br>目前，市面上比较流行的数据库有Oracle、MySQL等等。下面，我将会跟大家一起学习关于MySQL的基本知识。<br><a id="more"></a></p>
 <h2 id="1_MySQL_环境搭建">1 MySQL 环境搭建</h2><p>本篇文章将会以Mac系统为例子进行安装和环境配置。</p>
 <h4 id="1-1_MySQL的安装及环境配置">1.1 MySQL的安装及环境配置</h4><p><strong> 1&gt; 下载及安装 </strong></p>
 <p>下载地址：<a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/</a></p>
@@ -92,10 +180,54 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT NOW();</span><br></pre></td></tr></table></figure>
 <p>2&gt; 查看当前用户</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT USER();</span><br></pre></td></tr></table></figure>
+<h4 id="2-6_登录MySQL">2.6 登录MySQL</h4><p>最基本简单的登录方式是输入以下命令然后按照提示输入密码即可。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -uroot -p</span><br></pre></td></tr></table></figure></p>
+<p>如果你需要指定远程主机，则可以使用 <code>-h</code> ，当然MySQL登录的时候，还可以指定其它的参数，具体根据你的需要选择使用即可</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-D, --database={你的数据库名称}</td>
+<td>打开指定数据库</td>
+</tr>
+<tr>
+<td>--delimiter={分隔符}</td>
+<td>指定分隔符</td>
+</tr>
+<tr>
+<td>-h, --host={服务器URL}</td>
+<td>服务器名称</td>
+</tr>
+<tr>
+<td>-p, --password[=密码]</td>
+<td>密码</td>
+</tr>
+<tr>
+<td>-P, --port={端口号}</td>
+<td>端口号</td>
+</tr>
+<tr>
+<td>--prompt={提示符}</td>
+<td>提示符</td>
+</tr>
+<tr>
+<td>-u, --user={用户名}</td>
+<td>用户名称</td>
+</tr>
+<tr>
+<td>-V, --version</td>
+<td>输出版本信息并且退出</td>
+</tr>
+</tbody>
+</table>
 <p><br><br></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="/assets/blog_img/mysql-environment/mysql-logo.png" alt="图片来自网络－MySQL LOGO"><br>众所周知，数据库是存放数据的仓库。为了方便数据的存储和管理，将数据按照特定的规律存储在磁盘上。通过数据库管理系统，我们可以有效的组织和管理存储在数据库中的数据。<br>目前，市面上比较流行的数据库有Oracle、MySQL等等。下面，我们将会跟大家一起学习关于MySQL的基本知识。<br>]]>
+    <![CDATA[<p><img src="/assets/blog_img/mysql-environment/mysql-logo.png" alt="图片来自网络－MySQL LOGO"><br>众所周知，数据库是存放数据的仓库。为了方便数据的存储和管理，将数据按照特定的规律存储在磁盘上。通过数据库管理系统，我们可以有效的组织和管理存储在数据库中的数据。<br>目前，市面上比较流行的数据库有Oracle、MySQL等等。下面，我将会跟大家一起学习关于MySQL的基本知识。<br>]]>
     
     </summary>
     
