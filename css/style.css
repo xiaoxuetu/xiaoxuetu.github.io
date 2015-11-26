@@ -734,6 +734,18 @@ a {
 #disqus_thread {
   padding: 0 40px;
 }
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
 .archives-wrap {
   position: relative;
   margin: 0 30px;

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[挑战人生无极限，攀登人生更高峰]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiaoxuetu.github.io/"/>
-  <updated>2015-11-22T14:54:43.000Z</updated>
+  <updated>2015-11-26T17:20:12.000Z</updated>
   <id>http://xiaoxuetu.github.io/</id>
   
   <author>
@@ -13,6 +13,235 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[MySQL入门学习-数据类型及表操作]]></title>
+    <link href="http://xiaoxuetu.github.io/2015/11/24/mysql-tables-base-operations/"/>
+    <id>http://xiaoxuetu.github.io/2015/11/24/mysql-tables-base-operations/</id>
+    <published>2015-11-23T16:29:19.000Z</published>
+    <updated>2015-11-26T17:20:12.000Z</updated>
+    <content type="html"><![CDATA[<p>通过<a href="/2015/11/19/mysql-environment/">《MySQL入门学习-环境搭建》</a> 和 <a href="/2015/11/22/mysql-database/">《MySQL入门学习-数据库基本操作》</a> 两篇文章，我们成功搭建了MySQL并且熟悉了常用的数据库操作命令。<br>接下来，就让我们一起来学习关于数据表的基本操作吧。</p>
+<a id="more"></a>
+<h2 id="1_数据类型">1 数据类型</h2><p>在讲解数据表的基本操作之前，我们必须要先来学习下关于MySQL中的数据类型。</p>
+<p>从下图中，我们可以很清晰的看得出MySQL总的来说有四种数据类型<br><img src="/assets/blog_img/mysql-tables-base-operations/data-types.png" alt="MySQL数据类型"></p>
+<p>就像Java的整数类型总共有byte、short、int、long那样，在MySQL上述的四种数据类型中，具体细分下来，又会有很多种，所以下面我们一种一种来进行细分讲解。</p>
+<h4 id="1-1_整型">1.1 整型</h4><p>在MySQL中，整型总共分为5种，分别为 <code>TINYINT</code> 、 <code>SMALLINT</code> 、 <code>MEDIUMINT</code> 、 <code>INT</code> 、 <code>BIGINT</code> ,他们的存储范围和字节分别是:</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>存储范围</th>
+<th>字节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TINYINT</td>
+<td>有符号值： -128 到 127  (-2<sup>7</sup> 到 2<sup>7</sup>-1) <br> 无符号值：0 到 255  (0 到 2<sup>8</sup>-1)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>有符号值： -32768 到 32767  (-2<sup>15</sup> 到 2<sup>15</sup>-1) <br> 无符号值：0 到 65535  (0 到 2<sup>16</sup>-1)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td>有符号值： -8388608 到 8388607  (-2<sup>23</sup> 到 2<sup>23</sup>-1) <br> 无符号值：0 到 16777215  (0 到 2<sup>24</sup>-1)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>有符号值： -2147483648 到 2147483647  (-2<sup>31</sup> 到 2<sup>31</sup>-1) <br> 无符号值：0 到 4294967295 (0 到 2<sup>32</sup>-1)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>有符号值： -9223372036854775808 到 9223372036854775807  (-2<sup>63</sup> 到 2<sup>63</sup>-1) <br> 无符号值：0 到 18446744073709551615  (0 到 2<sup>64</sup>-1)</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-2_浮点型">1.2 浮点型</h4><p>在MySQL中，浮点型总共分为2种，分别为 <code>FLOAT</code> 、 <code>DOUBLE</code> ，他们的存储范围分别是:</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>存储范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FLOAT[(M, D)]</td>
+<td>-3.402823466E+38 到 -1.175494351E-38 <br> 0 和 1.175494351E-38 到 3.402823466E+38</td>
+</tr>
+<tr>
+<td>DOUBLE[(M, D)]</td>
+<td>-1.7976931348623157E+308 到 -2.225073858507204E-308 <br> 0 和 -2.225073858507204E-308 到 1.7976931348623157E+308</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意： 表格中，M表示数字总位数， D表示小数点后面的位数。 如果M 和 D 被省略，根据硬件允许的限制来保存值。单精度浮点数精确到大约7位小数位。</p>
+</blockquote>
+<h4 id="1-3_日期时间型">1.3 日期时间型</h4><p>在MySQL中，日期时间型总共分为5种，分别是 <code>YEAR</code> 、 <code>TIME</code> 、 <code>DATE</code> 、 <code>DATETIME</code> 、 <code>TIMESTAMP</code> ,它们的详细说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>字节</th>
+<th>详细说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YEAR[(2｜4)]</td>
+<td>1</td>
+<td>默认是四位格式。在四位格式中，允许的值是1901到2155和0000。<br> 在两位格式中，允许的值是70到69，表示从1970年到2069年。<br> MySQL以YYYY 格式显示YEAR值。</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>3</td>
+<td>范围是’-838:59:59’到’838:59:59’。MySQL以’HH:MM:SS’格式显示TIME值，但允许使用字符串或数字为TIME列分配值</td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>3</td>
+<td>支持的范围为’1000-01-01’到’9999-12-31’。MySQL以’YYYY-MM-DD’格式显示DATE值，但允许使用字符串或数字为DATE列分配值。</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>8</td>
+<td>日期和时间的组合。支持的范围是’1000-01-01 00:00:00’到’9999-12-31 23:59:59’。MySQL以’YYYY-MM-DD HH:MM:SS’格式显示DATETIME值，但允许使用字符串或数字为DATETIME列分配值。</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>4</td>
+<td>范围是’1970-01-01 00:00:00’到 2037年之间。 TIMESTAMP列用于INSERT或UPDATE操作时记录日期和时间。如果你不分配一个值，表中的第一个TIMESTAMP列自动设置为最近操作的日期和时间。也可以通过分配一个NULL值，将TIMESTAMP列设置为当前的日期和时间。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-4_字符型">1.4 字符型</h4><p>在MySQL中，字符型总共分为8种，它们分别是 <code>CHAR</code> 、 <code>VARCHAR</code> 、 <code>TINYTEXT</code> 、 <code>TEXT</code> 、 <code>MEDIUMTEXT</code> 、 <code>LONGTEXT</code> 、 <code>ENUM</code> 、 <code>SET</code> ，它们的详细说明是：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>存储说明</th>
+<th>其它说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHAR(M)</td>
+<td>M个字节， 0 &lt;= M &lt;= 255</td>
+<td>定长类型，比如CHAR(5),如果我们只赋值abc，那么系统会自动在后面补两个空格</td>
+</tr>
+<tr>
+<td>VARCHAR(M)</td>
+<td>L+1个字节，其中 L &lt;= M 且 0 &lt;= M &lt;= 65535</td>
+<td>变长类型</td>
+</tr>
+<tr>
+<td>TINYTEXT</td>
+<td>L+1个字节，其中 L &lt; 2<sup>8</sup></td>
+<td></td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>L+2个字节，其中 L &lt; 2<sup>16</sup></td>
+<td></td>
+</tr>
+<tr>
+<td>MEDIUMTEXT</td>
+<td>L+3个字节，其中 L &lt; 2<sup>24</sup></td>
+<td></td>
+</tr>
+<tr>
+<td>LONGTEXT</td>
+<td>L+4个字节，其中 L &lt; 2<sup>32</sup></td>
+<td></td>
+</tr>
+<tr>
+<td>ENUM(‘value1’,’value2’…)</td>
+<td>1或2个字节，取决于枚举值的个数，最多65535个</td>
+<td></td>
+</tr>
+<tr>
+<td>SET(‘value1’,’value2’…)</td>
+<td>1，2，3，4或者8个字节，取决于SET成员的数目，最多64个成员</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2_数据表创建">2 数据表创建</h2><p>了解完数据类型后，让我们一起来学习下怎么去进行数据表的创建。</p>
+<h4 id="2-1_数据表基础创建语句">2.1 数据表基础创建语句</h4><p>首先一起来看下，基本的数据表创建格式：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125;</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<p>假如我们想要创建一个用户表，它有以下属性：</p>
+<ul>
+<li>姓名: 因为姓名的长度是变化的，所以它属于变长字符串类型，考虑到人名一般不会太长，因此定义长度为25</li>
+<li>年龄: 因为是年龄，所以是整形</li>
+<li>工资: 因为钱，可以精确到小数点后两位，但是一般数字不会太大，所以我们使用FLOAT类型即可</li>
+</ul>
+<p>那么，我们的创建语句如下:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="keyword">user</span> (</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">25</span>),</span><br><span class="line">    age  TINYINT,</span><br><span class="line">    salary <span class="built_in">FLOAT</span>(<span class="number">7</span>,<span class="number">2</span>)</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-2_约束">2.2 约束</h4><p>有些时候，我们还说希望对我们的每一列的内容进行一定的限制的，在MySQL中，我们称之为约束。</p>
+<p>下面，我们将来讲解下当前MySQL中支持的约束方式。</p>
+<h6 id="2-2-1_非空约束">2.2.1 非空约束</h6><p>有时候，我们会希望某个字段禁止为空，这个时候，就对某一列有一个具体的约束了，此时，MySQL提供了一个非空约束，我们只要在某个字段后面添加 <code>NOT NULL</code> 即可。</p>
+<p>具体在创建表的时候，格式如下:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<p>比如，我想前面创建的用户表中的用户名不能为空，创建表时的语句则需要更改为:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="keyword">user</span> (</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">25</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    age  TINYINT,</span><br><span class="line">    salary <span class="built_in">FLOAT</span>(<span class="number">7</span>,<span class="number">2</span>)</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<h6 id="2-2-2_主键约束">2.2.2 主键约束</h6><p>也许我们会有这么一个需求，我们希望某一列能够保证记录的唯一性并且值不能为空，此时，MySQL提供了一个主键约束，我们只要在字段后面添加 <code>PRIMARY KEY</code> 或者在最后面使用 <code>PRIMARY KEY({字段名称}, {字段名称})</code> 。</p>
+<p>具体的SQL语句格式如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; PRIMARY <span class="keyword">KEY</span></span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    PRIMARY <span class="keyword">KEY</span>(&#123;字段名称&#125;）</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<p>为了方便和后面讲到的唯一约束进行对比，下面我们来总结一下 主键约束 的特点:</p>
+<ul>
+<li>设置为主键的列自动设置为非空 <code>NOT NULL</code></li>
+<li>主键用语保证记录的唯一性</li>
+<li>每张表只能存在一个主键</li>
+<li>自动为主键列创建索引</li>
+</ul>
+<h6 id="2-2-3_唯一约束">2.2.3 唯一约束</h6><p>当然，我们有时候想要有多个字段都是唯一的，并且这个字段的值可能是空的，此时，MySQL提供了一个唯一约束，我们只要在字断后面添加 <code>UNIQUE KEY</code> 或者在CREATE中使用 <code>UNIQUE({字段名称})</code> 即可。</p>
+<p>具体的SQL语句格式如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; <span class="keyword">UNIQUE</span> <span class="keyword">KEY</span></span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    <span class="keyword">UNIQUE</span>(&#123;字段名称&#125;）</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<p>下面总结下唯一约束的特征并且和主键约束进行对比，差别将会用红色进行标出:</p>
+<ul>
+<li>保证记录的唯一性</li>
+<li><font color="red">字段可以为空值</font></li>
+<li><font color="red">每张表可以存在多个唯一约束</font></li>
+<li>自动为唯一约束的列创建索引</li>
+</ul>
+<h6 id="2-2-4_默认约束">2.2.4 默认约束</h6><p>默认约束，它可以给这一列设置一个默认值，当我没有为某一列设置其它值时，那么这一列的值将会是我们设置的默认值。</p>
+<p>具体的SQL语句格式如下:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; <span class="keyword">DEFAULT</span> &#123;默认值&#125;</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<h6 id="2-2-5_外键约束">2.2.5 外键约束</h6><p>外键约束用于与另一张表的关联。是能确定另一张表记录的字段，用于保持数据的一致性。</p>
+<p>具体的SQL语句格式如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; FOREIGN <span class="keyword">KEY</span> <span class="keyword">REFERENCES</span> &#123;关联数据表名称&#125;(关联字断名称)</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125;,</span><br><span class="line">    FOREIGN <span class="keyword">KEY</span>(&#123;字段名称&#125;) <span class="keyword">references</span> &#123;关联数据表名称&#125;(关联字断名称)</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<h6 id="2-2-6_约束分类">2.2.6 约束分类</h6><p>通过前面的介绍，我们可以了解到，约束总共有5种，但是大家知道吗？约束从另外一个角度来说，可以分成两类：</p>
+<ul>
+<li>表级约束: 与列定义相互独立，不包含在列定义中；通常用于对多个列一起进行约束，与定义用’,’ 分隔；必须指出要约束的列的名称</li>
+<li>列级约束: 包含在列定义中；直接跟在该列的其它定义之后，用空格分隔；不必指定列名</li>
+</ul>
+<p>通过前面的定义以及各种约束的讲解，我们可以了解到：</p>
+<ul>
+<li>非空约束、默认约束只能用于列级约束的创建</li>
+<li>主键约束、外键约束、唯一约束皆可用于表级约束和列级约束的创建</li>
+</ul>
+<h4 id="2-3_表的基本操作">2.3 表的基本操作</h4><h6 id="2-3-1_字段操作">2.3.1 字段操作</h6><h6 id="2-3-2_约束操作">2.3.2 约束操作</h6><h6 id="2-3-3_数据表重命名">2.3.3 数据表重命名</h6><p><br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>通过<a href="/2015/11/19/mysql-environment/">《MySQL入门学习-环境搭建》</a> 和 <a href="/2015/11/22/mysql-database/">《MySQL入门学习-数据库基本操作》</a> 两篇文章，我们成功搭建了MySQL并且熟悉了常用的数据库操作命令。<br>接下来，就让我们一起来学习关于数据表的基本操作吧。</p>]]>
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://xiaoxuetu.github.io/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[MySQL入门学习-数据库基本操作]]></title>
