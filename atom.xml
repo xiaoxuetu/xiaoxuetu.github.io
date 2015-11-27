@@ -4,7 +4,7 @@
   <subtitle><![CDATA[挑战人生无极限，攀登人生更高峰]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiaoxuetu.github.io/"/>
-  <updated>2015-11-26T17:21:26.000Z</updated>
+  <updated>2015-11-27T16:21:25.000Z</updated>
   <id>http://xiaoxuetu.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://xiaoxuetu.github.io/2015/11/27/mysql-tables-base-operations/"/>
     <id>http://xiaoxuetu.github.io/2015/11/27/mysql-tables-base-operations/</id>
     <published>2015-11-26T16:29:19.000Z</published>
-    <updated>2015-11-26T17:21:26.000Z</updated>
+    <updated>2015-11-27T16:21:25.000Z</updated>
     <content type="html"><![CDATA[<p>通过<a href="/2015/11/19/mysql-environment/">《MySQL入门学习-环境搭建》</a> 和 <a href="/2015/11/22/mysql-database/">《MySQL入门学习-数据库基本操作》</a> 两篇文章，我们成功搭建了MySQL并且熟悉了常用的数据库操作命令。<br>接下来，就让我们一起来学习关于数据表的基本操作吧。</p>
 <a id="more"></a>
 <h2 id="1_数据类型">1 数据类型</h2><p>在讲解数据表的基本操作之前，我们必须要先来学习下关于MySQL中的数据类型。</p>
@@ -169,6 +169,7 @@
 <tr>
 <td>SET(‘value1’,’value2’…)</td>
 <td>1，2，3，4或者8个字节，取决于SET成员的数目，最多64个成员</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -190,11 +191,15 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
 <p>比如，我想前面创建的用户表中的用户名不能为空，创建表时的语句则需要更改为:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="keyword">user</span> (</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">25</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    age  TINYINT,</span><br><span class="line">    salary <span class="built_in">FLOAT</span>(<span class="number">7</span>,<span class="number">2</span>)</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
-<h6 id="2-2-2_主键约束">2.2.2 主键约束</h6><p>也许我们会有这么一个需求，我们希望某一列能够保证记录的唯一性并且值不能为空，此时，MySQL提供了一个主键约束，我们只要在字段后面添加 <code>PRIMARY KEY</code> 或者在最后面使用 <code>PRIMARY KEY({字段名称}, {字段名称})</code> 。</p>
+<h6 id="2-2-2_主键约束">2.2.2 主键约束</h6><p>1&gt; 创建主键约束</p>
+<p>也许我们会有这么一个需求，我们希望某一列能够保证记录的唯一性并且值不能为空，此时，MySQL提供了一个主键约束，我们只要在字段后面添加 <code>PRIMARY KEY</code> 或者在最后面使用 <code>PRIMARY KEY({字段名称}, {字段名称})</code> 。</p>
 <p>具体的SQL语句格式如下：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; PRIMARY <span class="keyword">KEY</span></span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
 <p>或者</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    PRIMARY <span class="keyword">KEY</span>(&#123;字段名称&#125;）</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<p>2&gt; 删除主键约束</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span>  TALBLE &#123;数据表名称&#125; <span class="keyword">DROP</span> PRIMARY <span class="keyword">KEY</span>;</span></span><br></pre></td></tr></table></figure>
+<p>3&gt; 主键约束的特点</p>
 <p>为了方便和后面讲到的唯一约束进行对比，下面我们来总结一下 主键约束 的特点:</p>
 <ul>
 <li>设置为主键的列自动设置为非空 <code>NOT NULL</code></li>
@@ -202,12 +207,15 @@
 <li>每张表只能存在一个主键</li>
 <li>自动为主键列创建索引</li>
 </ul>
-<h6 id="2-2-3_唯一约束">2.2.3 唯一约束</h6><p>当然，我们有时候想要有多个字段都是唯一的，并且这个字段的值可能是空的，此时，MySQL提供了一个唯一约束，我们只要在字断后面添加 <code>UNIQUE KEY</code> 或者在CREATE中使用 <code>UNIQUE({字段名称})</code> 即可。</p>
+<h6 id="2-2-3_唯一约束">2.2.3 唯一约束</h6><p>1&gt; 创建唯一约束</p>
+<p>当然，我们有时候想要有多个字段都是唯一的，并且这个字段的值可能是空的，此时，MySQL提供了一个唯一约束，我们只要在字断后面添加 <code>UNIQUE KEY</code> 或者在CREATE中使用 <code>UNIQUE({字段名称})</code> 即可。</p>
 <p>具体的SQL语句格式如下：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; <span class="keyword">UNIQUE</span> <span class="keyword">KEY</span></span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
 <p>或者</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    <span class="keyword">UNIQUE</span>(&#123;字段名称&#125;）</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
-<p>下面总结下唯一约束的特征并且和主键约束进行对比，差别将会用红色进行标出:</p>
+<p>2&gt; 删除唯一约束</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span>  TALBLE &#123;数据表名称&#125; <span class="keyword">DROP</span> &#123;<span class="keyword">INDEX</span> | <span class="keyword">KEY</span>&#125; &#123;唯一约束名称&#125;;</span></span><br></pre></td></tr></table></figure>
+<p>3&gt; 唯一约束的特点<br>下面总结下唯一约束的特征并且和主键约束进行对比，差别将会用红色进行标出:</p>
 <ul>
 <li>保证记录的唯一性</li>
 <li><font color="red">字段可以为空值</font></li>
@@ -217,11 +225,14 @@
 <h6 id="2-2-4_默认约束">2.2.4 默认约束</h6><p>默认约束，它可以给这一列设置一个默认值，当我没有为某一列设置其它值时，那么这一列的值将会是我们设置的默认值。</p>
 <p>具体的SQL语句格式如下:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; <span class="keyword">DEFAULT</span> &#123;默认值&#125;</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
-<h6 id="2-2-5_外键约束">2.2.5 外键约束</h6><p>外键约束用于与另一张表的关联。是能确定另一张表记录的字段，用于保持数据的一致性。</p>
+<h6 id="2-2-5_外键约束">2.2.5 外键约束</h6><p>1&gt; 创建外键约束</p>
+<p>外键约束用于与另一张表的关联。是能确定另一张表记录的字段，用于保持数据的一致性。</p>
 <p>具体的SQL语句格式如下：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125; FOREIGN <span class="keyword">KEY</span> <span class="keyword">REFERENCES</span> &#123;关联数据表名称&#125;(关联字断名称)</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
 <p>或者</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125;,</span><br><span class="line">    FOREIGN <span class="keyword">KEY</span>(&#123;字段名称&#125;) <span class="keyword">references</span> &#123;关联数据表名称&#125;(关联字断名称)</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] &#123;数据表名称&#125; (</span><br><span class="line">    &#123;列名&#125; &#123;数据类型&#125;,</span><br><span class="line">    FOREIGN <span class="keyword">KEY</span>(&#123;字段名称&#125;) <span class="keyword">REFERENCES</span> &#123;关联数据表名称&#125;(关联字断名称)</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<p>2&gt; 删除外键约束</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span>  TALBLE &#123;数据表名称&#125; <span class="keyword">DROP</span> FOREIGN <span class="keyword">KEY</span> &#123;外键约束名称&#125;;</span></span><br></pre></td></tr></table></figure>
 <h6 id="2-2-6_约束分类">2.2.6 约束分类</h6><p>通过前面的介绍，我们可以了解到，约束总共有5种，但是大家知道吗？约束从另外一个角度来说，可以分成两类：</p>
 <ul>
 <li>表级约束: 与列定义相互独立，不包含在列定义中；通常用于对多个列一起进行约束，与定义用’,’ 分隔；必须指出要约束的列的名称</li>
@@ -232,7 +243,19 @@
 <li>非空约束、默认约束只能用于列级约束的创建</li>
 <li>主键约束、外键约束、唯一约束皆可用于表级约束和列级约束的创建</li>
 </ul>
-<h4 id="2-3_表的基本操作">2.3 表的基本操作</h4><h6 id="2-3-1_字段操作">2.3.1 字段操作</h6><h6 id="2-3-2_约束操作">2.3.2 约束操作</h6><h6 id="2-3-3_数据表重命名">2.3.3 数据表重命名</h6><p><br><br></p>
+<h4 id="2-3_表的基本操作">2.3 表的基本操作</h4><h6 id="2-3-1_字段操作">2.3.1 字段操作</h6><p><strong> 1&gt; 向表中添加新的字段 </strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &#123;数据表名称&#125; <span class="keyword">ADD</span> &#123;列名称&#125; &#123;列定义&#125;;</span></span><br></pre></td></tr></table></figure>
+<p><strong> 2&gt; 修改列名称 </strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &#123;数据表名称&#125; <span class="keyword">CHANGE</span> [<span class="keyword">COLUMN</span>] &#123;列名称&#125; &#123;新的列名称&#125; &#123;列定义&#125; [<span class="keyword">FIRST</span> | <span class="keyword">AFTER</span> &#123;列名称&#125;];</span></span><br></pre></td></tr></table></figure>
+<p><strong> 3&gt; 修改列定义 </strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &#123;数据表名称&#125; <span class="keyword">MODIFY</span> [<span class="keyword">COLUMN</span>] &#123;列名称&#125; &#123;列定义&#125; [<span class="keyword">FIRST</span> | <span class="keyword">AFTER</span> &#123;列名称&#125;];</span></span><br></pre></td></tr></table></figure>
+<p><strong> 4&gt; 删除列定义 </strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &#123;数据表名称&#125; <span class="keyword">DROP</span> [<span class="keyword">COLUMN</span>] &#123;列名称&#125;;</span></span><br></pre></td></tr></table></figure>
+<h6 id="2-3-2_数据表重命名">2.3.2 数据表重命名</h6><p>给现有的数据表重新命名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &#123;数据表名称&#125; RENAME [<span class="keyword">TO</span> | <span class="keyword">AS</span>] &#123;新数据表名称&#125;;</span></span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">RENAME <span class="keyword">TABLE</span> &#123;数据表名称&#125; RENAME <span class="keyword">TO</span> &#123;新数据表名称&#125; [,  &#123;数据表名称<span class="number">1</span>&#125; <span class="keyword">TO</span>  &#123;新数据表名称<span class="number">1</span>&#125;];</span></span><br></pre></td></tr></table></figure>
+<p><br><br></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>通过<a href="/2015/11/19/mysql-environment/">《MySQL入门学习-环境搭建》</a> 和 <a href="/2015/11/22/mysql-database/">《MySQL入门学习-数据库基本操作》</a> 两篇文章，我们成功搭建了MySQL并且熟悉了常用的数据库操作命令。<br>接下来，就让我们一起来学习关于数据表的基本操作吧。</p>]]>
