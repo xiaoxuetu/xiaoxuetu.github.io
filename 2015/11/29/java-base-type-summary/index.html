@@ -1,0 +1,540 @@
+
+  <!-- 原来的内容-->
+  <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java基础类型总结 | 小学徒的成长历程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="baidu-site-verification" content="4oUTRJ9VQC" />
+  <meta name="google-site-verification" content="YtGwaDB5V9NqKBWVHprUY0m6Xn6WABn_7chjlZatd6M" />
+
+  
+    <meta name="keywords" content="java-base-type-summary, Java基础类型总结, Java, 基础类型,Java,开发者,程序猿,程序员,极客,编程,代码,开源,IT网站,Developer,Programmer,小学徒的成长历程，小学徒, 博客">
+  
+
+  <meta name="description" content="最近一直在总结反思自己, 趁着现在周末的空余时间，从基础开始重新温故学习下Java，充实下自己。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础类型总结">
+<meta property="og:url" content="http://xiaoxuetu.github.io/2015/11/29/java-base-type-summary/index.html">
+<meta property="og:site_name" content="小学徒的成长历程">
+<meta property="og:description" content="最近一直在总结反思自己, 趁着现在周末的空余时间，从基础开始重新温故学习下Java，充实下自己。">
+<meta property="og:image" content="http://xiaoxuetu.github.io/assets/blog_img/java-base-type-summary/java-base-type-summary.png">
+<meta property="og:image" content="http://xiaoxuetu.github.io/assets/blog_img/java-base-type-summary/java-int-type-summary.png">
+<meta property="og:image" content="http://xiaoxuetu.github.io/assets/blog_img/java-base-type-summary/java-float-type-summary.png">
+<meta property="og:updated_time" content="2015-11-28T17:18:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础类型总结">
+<meta name="twitter:description" content="最近一直在总结反思自己, 趁着现在周末的空余时间，从基础开始重新温故学习下Java，充实下自己。">
+  
+    <link rel="alternative" href="/atom.xml" title="小学徒的成长历程" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/assets/blog_img/avastar.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<!-- Clicki Analytics -->
+<script type='text/javascript'>
+(function() {
+    var c = document.createElement('script'); 
+    c.type = 'text/javascript';
+    c.async = true;
+    c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.clicki.cn/boot/52181';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+<!-- End Clicki Analytics -->
+
+
+</head>
+  <body>
+    <div id="container">
+      <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/blog_img/avastar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">小学徒V</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">挑战人生无极限，攀登人生更高峰</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xiaoxuetu" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/1784521311" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/职业生涯/" style="font-size: 10px;">职业生涯</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://fanlychie.github.io/">Java@范忠云的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.liuchendi.com/">IOS@刘晨迪的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">2014年毕业于某重点工科院校。爱写博客、爱编程、爱生活的小青年。目前就业于XX浏览器。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+      </div>
+      <div class="mid-col">
+        <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">小学徒V</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/assets/blog_img/avastar.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">小学徒V</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">挑战人生无极限，攀登人生更高峰</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xiaoxuetu" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/1784521311" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+        <div class="body-wrap"><article id="post-java-base-type-summary" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/29/java-base-type-summary/" class="article-date">
+  	<time datetime="2015-11-28T16:32:42.000Z" itemprop="datePublished">2015-11-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      
+      Java基础类型总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+        
+
+        <p class="article-more-link"><a id="busuanzi_container_site_pv">您是本文的第<span id="busuanzi_value_page_pv"></span>个读者</a></p>
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一直在总结反思自己, 趁着现在周末的空余时间，从基础开始重新温故学习下Java，充实下自己。</p>
+<a id="more"></a>
+<h2 id="1_数据类型">1 数据类型</h2><p>从下图中，我们可以很清晰的看出Java中的类型，其中红色方框中的是Java的4种基本数据类型：<br><img src="/assets/blog_img/java-base-type-summary/java-base-type-summary.png" alt="Java基础类型总结"><br>下面我们来详细讲解上图中的基本类型：</p>
+<h4 id="1-1_整数类型">1.1 整数类型</h4><p>1&gt; 在Java中，整数类型共有4种，它们有固定的表述范围和字段长度，且不受具体的操作系统的影响，保证了Java的跨平台性</p>
+<p>2&gt; Java语言中，整数有三种表现形式，分别是：</p>
+<p>　　  a. 十进制整数，如 120， -31， 0</p>
+<p>　　  b. 八进制整数，要求以0开头<font color="red">(注意这是数字0，不是字母o)</font>，如：012,</p>
+<p>　　  c. 十六进制整数，要求以0x开头<font color="red">(注意这是数字0，不是字母o)</font>，如： 0x12</p>
+<p>3&gt; Java语言中，默认的整数类型是int类型，声明long类型的时候，后面必须要加个l<font color="red">(字母L的小写，不是大写字母I，也不是数字1)</font>或者L，建议使用大写L，防止和数字1，大写字母I混淆，如：30L， 30l</p>
+<p>4&gt; Java中四种整数类型的表述范围：<br><img src="/assets/blog_img/java-base-type-summary/java-int-type-summary.png" alt="Java int 类型总结"></p>
+<h4 id="1-2_浮点类型">1.2 浮点类型</h4><p>1&gt; 与整数类型一样，同样有固定的表述范围和字段长度，且不受具体的操作系统的影响，保证了Java的跨平台性</p>
+<p>2&gt; Java语言中，浮点类型有两种表现形式，分别是：</p>
+<p>　　  a. 十进制数形式， 如3.14</p>
+<p>　　  b. 科学计数法，如，3.14e2, 3.14e-2, -3.14E2</p>
+<p>3&gt; Java语言中，默认的浮点数类型是double，声明float类型的时候，后面必须添加字母f或者F，如3.14F，3.14f</p>
+<p>4&gt; Java中两种浮点类型的表述范围：<br><img src="/assets/blog_img/java-base-type-summary/java-float-type-summary.png" alt="Java float 类型总结"></p>
+<h4 id="1-3_字符类型">1.3 字符类型</h4><p>1&gt; 字符类型是用’’单引号括起来的单个字符，例如<code>char c = &#39;w&#39;; char a = &#39;中&#39;;</code> </p>
+<p>2&gt; Java字符采用Unicode（全球语言统一编码）编码，每个字符占两个字节，因而可用16进制编码形式表示，如：<code>char c = &#39;\u0061&#39;</code> </p>
+<p>3&gt; Java中允许使用转义字符’\’将其后面的字符转换成其他含义， 如： <code>char c = &#39;\n&#39;;  //表示换行</code> </p>
+<h4 id="1-4_布尔类型">1.4 布尔类型</h4><p>1&gt; boolean类型的值只有两种：true， false</p>
+<p>2&gt; boolean类型不可以转换为其他的数据类型</p>
+<h4 id="1-5_基本数据类型的转换">1.5 基本数据类型的转换</h4><p>1&gt; boolean不可以转换为其他的数据类型</p>
+<p>2&gt; 整数型，浮点类型，字符型是可以相互转换的，转换时遵守下面的原则：</p>
+<p>　　  a. 容量小的类型自动转换为大的类型，数据类型按容量大小排序为：</p>
+<p>　　　　　byte, short, char &lt; int &lt; long &lt;float &lt; double</p>
+<p>　　  b. byte, short, char 三种类型间不会相互转换，他们三者在计算时，首先会转换为int类型</p>
+<p>　　  c. 容量大的类型在转换为小的类型的时候，必须加上强制转换符，此时可能造成精度降低或者溢出问题</p>
+<p>　　  d. 有多种数据类型混合计算的时候，系统首先自动转换为容量最大的那个类型再来继续计算</p>
+<p>　　  e. 实数类型默认为double类型，如， 1.2； 整数类型默认为int类型，如 1</p>
+<h2 id="2_JVM对基本类型的处理">2 JVM对基本类型的处理</h2><h4 id="2-1_常量池技术">2.1 常量池技术</h4><p>1&gt; java中基本类型的包装类的大部分都实现了常量池技术，这些类是Byte,Short,Integer,Long,Character,Boolean,另外两种浮点数类型的包装类则没有实现。</p>
+<p>2&gt; Byte,Short,Integer,Long,Character这5种整型的包装类也只是在对应值小于等于127时才可使用对象池</p>
+<p>下面我们主要使用Long类型来进行讲解吧。<br>首先我们先写一个测试类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kevin.basetype;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LongTypeTest</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> longParam = <span class="number">30L</span>;</span><br><span class="line">        Long longParam2 = <span class="number">30L</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们通过javac命令编译后，再通过jad命令生成编译文件来查看编译信息，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.</span></span><br><span class="line"><span class="comment">// Jad home page: http://www.kpdus.com/jad.html</span></span><br><span class="line"><span class="comment">// Decompiler options: packimports(3) annotate </span></span><br><span class="line"><span class="comment">// Source File Name:   LongTypeTest.java</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.kevin.basetype;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LongTypeTest</span></span><br><span class="line"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LongTypeTest</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">    <span class="comment">//    0    0:aload_0         </span></span><br><span class="line">    <span class="comment">//    1    1:invokespecial   #1   &lt;Method void Object()&gt;</span></span><br><span class="line">    <span class="comment">//    2    4:return          </span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> longParam = <span class="number">30L</span>;</span><br><span class="line">    <span class="comment">//    0    0:ldc2w           #2   &lt;Long 30L&gt;</span></span><br><span class="line">    <span class="comment">//    1    3:lstore_1        </span></span><br><span class="line">        Long longParam2 = Long.valueOf(<span class="number">30L</span>);</span><br><span class="line">    <span class="comment">//    2    4:ldc2w           #2   &lt;Long 30L&gt;</span></span><br><span class="line">    <span class="comment">//    3    7:invokestatic    #4   &lt;Method Long Long.valueOf(long)&gt;</span></span><br><span class="line">    <span class="comment">//    4   10:astore_3        </span></span><br><span class="line">    <span class="comment">//    5   11:return          </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从第26行，我们可以看到，使用包装类初始化的时候，调用的是Long类中的valueOf方法，下面我们看看，Long类中的该方法是怎样的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Long <span class="title">valueOf</span><span class="params">(<span class="keyword">long</span> l)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> offset = <span class="number">128</span>;</span><br><span class="line">    <span class="comment">//当 l &gt;= -128 &amp;&amp; l &lt;= 127 时，返回常量池中缓存的数据</span></span><br><span class="line">    <span class="keyword">if</span> (l &gt;= -<span class="number">128</span> &amp;&amp; l &lt;= <span class="number">127</span>) &#123; <span class="comment">// will cache</span></span><br><span class="line">        <span class="keyword">return</span> LongCache.cache[(<span class="keyword">int</span>)l + offset];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//否则初始化一个新的Long对象</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Long(l);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从代码中看出，当 l 的值小于127的时候，将会调用LongCache.cache()中获取常量池中的数值。其中，LongCache是一个内部类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Long类中的私有类</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">LongCache</span> </span>&#123;</span><br><span class="line">    <span class="comment">//私有的构造方法，不允许初始化</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">LongCache</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">//static final类型，它的值在编译期间将会确定下来并且被存储到常量池中</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> Long cache[] = <span class="keyword">new</span> Long[-(-<span class="number">128</span>) + <span class="number">127</span> + <span class="number">1</span>];</span><br><span class="line">    <span class="comment">//静态代码块，为cache数组赋值</span></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cache.length; i++)</span><br><span class="line">            cache[i] = <span class="keyword">new</span> Long(i - <span class="number">128</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其他Byte,Short,Integer,Long,Character,Boolean都是差不多的，具体就不在此重复讲了。</p>
+<p>我们在Double中的valueOf中我们可以看到源代码是这样子的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Double <span class="title">valueOf</span><span class="params">(<span class="keyword">double</span> d)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//直接初始化并返回一个Double对象</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Double(d);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2_short,_int,_char_-&gt;_byte（char）">2.2 short, int, char -&gt; byte（char）</h4><p>看到这个，估计大家都很奇怪，这个标题究竟是什么意思呢？下面我们就来讲解下：</p>
+<p>   1&gt; 当short, int, char 的数值小于127大于-128时，编译器在内存中会使用byte类型来进行记录。</p>
+<p>   2&gt; 当short, int, char 的值大于127却小于 2<sup>15</sup>-1时，编译器在内存中会使用char类型来进行记录。</p>
+<p>换句话来说，byte, short, int, char四个基本类型，编译器在内存中将会使用最小的单位去存储他们的值的内容。</p>
+<p>接着我们先写个测试类来验证下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kevin.basetype;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseType</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span> bytePram = <span class="number">10</span>;</span><br><span class="line">        Byte bytePram2 = <span class="number">10</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">short</span> shortParam = <span class="number">40</span>;</span><br><span class="line">        Short shrotParam2 = <span class="number">40</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> intParam = <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">int</span> intParam2 = <span class="number">20</span>;</span><br><span class="line">        Integer integerParam = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">long</span> longParam = <span class="number">30</span>;</span><br><span class="line">        Long longParam2 = <span class="number">30L</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">double</span> doubleParam = <span class="number">20.0</span>;</span><br><span class="line">        <span class="keyword">double</span> doubleParam4 = <span class="number">20.0</span>;</span><br><span class="line">        Double doubleParam2 = <span class="number">20.0</span>;</span><br><span class="line">        Double doubleParam3 = <span class="number">20.0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">float</span> floatParam = <span class="number">20.0f</span>;</span><br><span class="line">        Float floatParam2 = <span class="number">20.0f</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">boolean</span> booleanParam = <span class="keyword">true</span>;</span><br><span class="line">        Boolean booleanParam2 = <span class="keyword">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">char</span> charParam = <span class="string">'a'</span>;</span><br><span class="line">        <span class="keyword">char</span> charParam2 = <span class="string">'a'</span>;</span><br><span class="line">        Character characterParam = <span class="string">'a'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2)继续查看编译信息：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.</span></span><br><span class="line"><span class="comment">// Jad home page: http://www.kpdus.com/jad.html</span></span><br><span class="line"><span class="comment">// Decompiler options: packimports(3) annotate </span></span><br><span class="line"><span class="comment">// Source File Name:   BaseType.java</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.kevin.basetype;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseType</span></span><br><span class="line"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BaseType</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">    <span class="comment">//    0    0:aload_0         </span></span><br><span class="line">    <span class="comment">//    1    1:invokespecial   #1   &lt;Method void Object()&gt;</span></span><br><span class="line">    <span class="comment">//    2    4:return          </span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span> byte0 = <span class="number">10</span>;</span><br><span class="line">    <span class="comment">//    0    0:bipush          10</span></span><br><span class="line">    <span class="comment">//    1    2:istore_1        </span></span><br><span class="line">        Byte byte1 = Byte.valueOf((<span class="keyword">byte</span>)<span class="number">10</span>);</span><br><span class="line">    <span class="comment">//    2    3:bipush          10</span></span><br><span class="line">    <span class="comment">//    3    5:invokestatic    #2   &lt;Method Byte Byte.valueOf(byte)&gt;</span></span><br><span class="line">    <span class="comment">//    4    8:astore_2        </span></span><br><span class="line">        <span class="keyword">byte</span> byte2 = <span class="number">40</span>;</span><br><span class="line">    <span class="comment">//    5    9:bipush          40</span></span><br><span class="line">    <span class="comment">//    6   11:istore_3        </span></span><br><span class="line">        Short short1 = Short.valueOf((<span class="keyword">short</span>)<span class="number">40</span>);</span><br><span class="line">    <span class="comment">//    7   12:bipush          40</span></span><br><span class="line">    <span class="comment">//    8   14:invokestatic    #3   &lt;Method Short Short.valueOf(short)&gt;</span></span><br><span class="line">    <span class="comment">//    9   17:astore          4</span></span><br><span class="line">        <span class="keyword">byte</span> byte3 = <span class="number">20</span>;</span><br><span class="line">    <span class="comment">//   10   19:bipush          20</span></span><br><span class="line">    <span class="comment">//   11   21:istore          5</span></span><br><span class="line">        <span class="keyword">byte</span> byte4 = <span class="number">20</span>;</span><br><span class="line">    <span class="comment">//   12   23:bipush          20</span></span><br><span class="line">    <span class="comment">//   13   25:istore          6</span></span><br><span class="line">        Integer integer = Integer.valueOf(<span class="number">20</span>);</span><br><span class="line">    <span class="comment">//   14   27:bipush          20</span></span><br><span class="line">    <span class="comment">//   15   29:invokestatic    #4   &lt;Method Integer Integer.valueOf(int)&gt;</span></span><br><span class="line">    <span class="comment">//   16   32:astore          7</span></span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">30L</span>;</span><br><span class="line">    <span class="comment">//   17   34:ldc2w           #5   &lt;Long 30L&gt;</span></span><br><span class="line">    <span class="comment">//   18   37:lstore          8</span></span><br><span class="line">        Long long1 = Long.valueOf(<span class="number">30L</span>);</span><br><span class="line">    <span class="comment">//   19   39:ldc2w           #5   &lt;Long 30L&gt;</span></span><br><span class="line">    <span class="comment">//   20   42:invokestatic    #7   &lt;Method Long Long.valueOf(long)&gt;</span></span><br><span class="line">    <span class="comment">//   21   45:astore          10</span></span><br><span class="line">        <span class="keyword">double</span> d = <span class="number">20</span>D;</span><br><span class="line">    <span class="comment">//   22   47:ldc2w           #8   &lt;Double 20D&gt;</span></span><br><span class="line">    <span class="comment">//   23   50:dstore          11</span></span><br><span class="line">        <span class="keyword">double</span> d1 = <span class="number">20</span>D;</span><br><span class="line">    <span class="comment">//   24   52:ldc2w           #8   &lt;Double 20D&gt;</span></span><br><span class="line">    <span class="comment">//   25   55:dstore          13</span></span><br><span class="line">        Double double1 = Double.valueOf(<span class="number">20</span>D);</span><br><span class="line">    <span class="comment">//   26   57:ldc2w           #8   &lt;Double 20D&gt;</span></span><br><span class="line">    <span class="comment">//   27   60:invokestatic    #10  &lt;Method Double Double.valueOf(double)&gt;</span></span><br><span class="line">    <span class="comment">//   28   63:astore          15</span></span><br><span class="line">        Double double2 = Double.valueOf(<span class="number">20</span>D);</span><br><span class="line">    <span class="comment">//   29   65:ldc2w           #8   &lt;Double 20D&gt;</span></span><br><span class="line">    <span class="comment">//   30   68:invokestatic    #10  &lt;Method Double Double.valueOf(double)&gt;</span></span><br><span class="line">    <span class="comment">//   31   71:astore          16</span></span><br><span class="line">        <span class="keyword">float</span> f = <span class="number">20F</span>;</span><br><span class="line">    <span class="comment">//   32   73:ldc1            #11  &lt;Float 20F&gt;</span></span><br><span class="line">    <span class="comment">//   33   75:fstore          17</span></span><br><span class="line">        Float float1 = Float.valueOf(<span class="number">20F</span>);</span><br><span class="line">    <span class="comment">//   34   77:ldc1            #11  &lt;Float 20F&gt;</span></span><br><span class="line">    <span class="comment">//   35   79:invokestatic    #12  &lt;Method Float Float.valueOf(float)&gt;</span></span><br><span class="line">    <span class="comment">//   36   82:astore          18</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">    <span class="comment">//   37   84:iconst_1        </span></span><br><span class="line">    <span class="comment">//   38   85:istore          19</span></span><br><span class="line">        Boolean boolean1 = Boolean.valueOf(<span class="keyword">true</span>);</span><br><span class="line">    <span class="comment">//   39   87:iconst_1        </span></span><br><span class="line">    <span class="comment">//   40   88:invokestatic    #13  &lt;Method Boolean Boolean.valueOf(boolean)&gt;</span></span><br><span class="line">    <span class="comment">//   41   91:astore          20</span></span><br><span class="line">        <span class="keyword">byte</span> byte5 = <span class="number">97</span>;</span><br><span class="line">    <span class="comment">//   42   93:bipush          97</span></span><br><span class="line">    <span class="comment">//   43   95:istore          21</span></span><br><span class="line">        <span class="keyword">byte</span> byte6 = <span class="number">97</span>;</span><br><span class="line">    <span class="comment">//   44   97:bipush          97</span></span><br><span class="line">    <span class="comment">//   45   99:istore          22</span></span><br><span class="line">        Character character = Character.valueOf(<span class="string">'a'</span>);</span><br><span class="line">    <span class="comment">//   46  101:bipush          97</span></span><br><span class="line">    <span class="comment">//   47  103:invokestatic    #14  &lt;Method Character Character.valueOf(char)&gt;</span></span><br><span class="line">    <span class="comment">//   48  106:astore          23</span></span><br><span class="line">    <span class="comment">//   49  108:return          </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看完上面以后，大家可能会有这么一个疑问：short, char都是两个字节，为什么存储的时候，会选择使用char类型来进行存储二不选择short呢？</p>
+<p>解答：因为short是有符号的，而char类型是无类型的，可以表示的数值范围比short大，所以虽然同样是两个字节，但是却选择了char类型而不选择short类型进行值存储。</p>
+<h4 id="2-3_final,_Number,_Comparable与基础类型包装类的关系">2.3 final, Number, Comparable与基础类型包装类的关系</h4><p>1&gt; 所有的基本类型的包装类都使用了final来进行修饰，保证了系统的安全性，试想一下，假设有人也自定义了这么一个java.lang.Integer同时继承了jdk中的java.lang.Integer，并且在里面实现了一些破坏性的代码，那后果将不堪设想了对吧。</p>
+<p>2&gt; 除了Character，Boolean以外，其他的基本类型包装类都继承了抽象类Number。这个抽象类要求继承类必须实现将当前类型的值转换为其他类型的值方法</p>
+<p>3&gt; 所有的基本类型包装类都实现了接口Comparable。这个接口的作用是：</p>
+<p>　　  a. 当List/Array中的对象实现了该接口的话，可以直接用Collections.sort()方法进行自动排序</p>
+<p>　　  b. 当一个普通的Object对象实现了该接口，那么将可以用作具有自动sort作用（例如TreeMap）的Map集合中的排序依据key或者具有自动sort作用的Set集合中的排序根据对象</p>
+<p><br><br></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+  <blockquote class="article-declaration"> 
+1、本文采用<a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
+<br/><br/>
+
+2、转载请在评论处说明并且注明出处:<a href="/" target="_blank">http://xiaoxuetu.github.io</a> , 谢谢合作 ！
+</blockquote>
+
+  
+
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/28/java-useful-libs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 常用库 (持续更新)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share">
+    <!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_tumblr"></a>
+
+		<a href="http://www.jiathis.com/share?uid=1875336" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+		<a class="jiathis_counter_style"></a>
+	</div>
+	<script type="text/javascript">var jiathis_config = {"data_track_clickback":true};</script>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1875336" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+<div class="duoshuo">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="java-base-type-summary" data-title="Java基础类型总结" data-url="http://xiaoxuetu.github.io/2015/11/29/java-base-type-summary/"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+</div>
+        <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 小学徒V
+    	</div>
+      <div class="footer-center">
+        <span id="busuanzi_container_site_uv">
+          本站总访问量:<span id="busuanzi_value_site_pv"></span> , 
+          您是第<span id="busuanzi_value_site_uv"></span>个到来的小伙伴</span>
+      </div>
+      <div class="footer-right">
+      	<a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>  Theme
+      </div>
+    </div>
+  </div>
+</footer>
+      </div>
+      
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"xiaoxuetu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '/js/duoshuo/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+<script src="/js/main.js" type="text/javascript"></script>
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<!-- 返回顶部按钮 -->
+
+  <!-- Go to top -->
+<div id="totop" style="position:fixed;bottom:150px;right:160px;cursor: pointer;">
+<a title="返回顶部"><img src="/assets/blog_img/go2top.png"/></a>
+</div>
+<script type="text/javascript">
+(function($) { 
+  // When to show the scroll link
+  // higher number = scroll link appears further down the page   
+  var upperLimit = 150;
+  
+  // Our scroll link element
+  var scrollElem = $('#totop');
+   
+  // Scroll to top speed
+  var scrollSpeed = 500;
+   
+  // Show and hide the scroll to top link based on scroll position   
+  scrollElem.hide();
+  $(window).scroll(function () {            
+    var scrollTop = $(document).scrollTop();       
+    if ( scrollTop > upperLimit ) {
+      $(scrollElem).stop().fadeTo(300, 1); // fade back in           
+    }else{       
+      $(scrollElem).stop().fadeTo(300, 0); // fade out
+    }
+  });
+  // Scroll to top animation on click
+  $(scrollElem).click(function(){
+    $('html, body').animate({scrollTop:0}, scrollSpeed); return false;
+  });
+})(jQuery);</script>
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-66682510-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<!-- 不蒜子 -->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- tencent ta-->
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=50771973" charset="UTF-8"></script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+    </div>
+  </body>
+  </html>
