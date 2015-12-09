@@ -3,6 +3,23 @@
 
     
   <url>
+    <loc>http://xiaoxuetu.github.io/2015/08/31/hexo-guide/</loc>
+    <lastmod>2015-12-09T16:29:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>利用Hexo搭建个人博客－博客初始化篇</title>
+        <pubTime>2015-08-31T15:14:58.000Z</pubTime>
+        
+        <tag>hexo </tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xiaoxuetu.github.io/2015/11/29/java-base-type-summary/</loc>
     <lastmod>2015-11-28T17:18:55.000Z</lastmod>
     <data>
@@ -111,23 +128,6 @@
         <display>
         <title>利用Hexo搭建个人博客－博客发布篇</title>
         <pubTime>2015-09-06T12:22:02.000Z</pubTime>
-        
-        <tag>hexo </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xiaoxuetu.github.io/2015/08/31/hexo-guide/</loc>
-    <lastmod>2015-11-19T12:52:43.000Z</lastmod>
-    <data>
-        <display>
-        <title>利用Hexo搭建个人博客－博客初始化篇</title>
-        <pubTime>2015-08-31T15:14:58.000Z</pubTime>
         
         <tag>hexo </tag>
          

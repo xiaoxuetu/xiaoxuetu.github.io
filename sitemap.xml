@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xiaoxuetu.github.io/2015/08/31/hexo-guide/</loc>
+    <lastmod>2015-12-09T16:29:37.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://xiaoxuetu.github.io/2015/11/29/java-base-type-summary/</loc>
     <lastmod>2015-11-28T17:18:55.000Z</lastmod>
   </url>
@@ -34,11 +39,6 @@
   <url>
     <loc>http://xiaoxuetu.github.io/2015/09/06/hexo-issue/</loc>
     <lastmod>2015-11-19T12:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://xiaoxuetu.github.io/2015/08/31/hexo-guide/</loc>
-    <lastmod>2015-11-19T12:52:43.000Z</lastmod>
   </url>
   
   <url>

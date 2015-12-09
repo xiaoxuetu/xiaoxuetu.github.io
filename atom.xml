@@ -745,7 +745,7 @@
     <link href="http://xiaoxuetu.github.io/2015/08/31/hexo-guide/"/>
     <id>http://xiaoxuetu.github.io/2015/08/31/hexo-guide/</id>
     <published>2015-08-31T15:14:58.000Z</published>
-    <updated>2015-11-19T12:52:43.000Z</updated>
+    <updated>2015-12-09T16:29:37.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/assets/blog_img/hexo-guide/hexo_hello_world.png" alt="图片来自网络"><br>上一篇博文 <a href="/2015/08/29/hexo-mac-environment/">《利用Hexo搭建个人博客－环境搭建篇》</a> 中，我们讲解了利用Hexo搭建个人博客应该要配置哪些环境。<br>相信大家已经迫不及待的想要知道接下来应该要怎么把自己的博客搭起来了，下面，让我们一起见证这奇迹的时刻。</p>
 <a id="more"></a>
 <h2 id="1_初始化博客">1 初始化博客</h2><p>首先，我们需要按照下面的步骤进行博客的初始化：</p>
@@ -810,7 +810,7 @@
 <p>3&gt; 侧边栏配置</p>
 <p>主要是对侧边栏展现进行设置。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Sidebar</span><br><span class="line">sidebar: right    # 侧边栏展示的方向</span><br><span class="line">widgets:          # 侧边栏添加的组件配置</span><br><span class="line">- category        # 显示分类</span><br><span class="line">- tag             # 显示标签</span><br><span class="line">- tagcloud        # 显示标签云</span><br><span class="line">- archive         # 显示归档</span><br><span class="line">- recent_posts    # 显示最近发布</span><br></pre></td></tr></table></figure>
-<p>3&gt; 其他配置</p>
+<p>4&gt; 其他配置</p>
 <p>第1点 和 第2点 都是大部分主题通用的配置，下面这些就是比较定制化的了。除了下面列出的，国内大部分主题都还会添加了百度统计的ID配置、多说的ID配置、Jiathis分享活着百度分享的配置等等。</p>
 <p>具体我们依旧是只讲解默认主题里面的。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Miscellaneous</span><br><span class="line">google_analytics: "UA-********-1"    # 谷歌统计的ID配置，如果你没有用到，可以为空</span><br><span class="line">favicon: /favicon.png                # 网站图标路径</span><br><span class="line">twitter:                             # twitter配置</span><br><span class="line">google_plus:                         # google plus 配置</span><br><span class="line">fb_admins:                           # facebook 配置</span><br><span class="line">fb_app_id:</span><br></pre></td></tr></table></figure>
