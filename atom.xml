@@ -4,7 +4,7 @@
   <subtitle><![CDATA[挑战人生无极限，攀登人生更高峰]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiaoxuetu.github.io/"/>
-  <updated>2015-12-09T16:43:30.000Z</updated>
+  <updated>2015-12-09T16:44:49.000Z</updated>
   <id>http://xiaoxuetu.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://xiaoxuetu.github.io/2015/12/10/jenkins-useful-plugins/"/>
     <id>http://xiaoxuetu.github.io/2015/12/10/jenkins-useful-plugins/</id>
     <published>2015-12-09T16:33:27.000Z</published>
-    <updated>2015-12-09T16:43:30.000Z</updated>
+    <updated>2015-12-09T16:44:49.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/assets/blog_img/jenkins-useful-plugins/jenkins-logo.png" alt="Jenkins Logo"></p>
 <p>本文主要记录在学习以及使用Jenkins过程中常用的对我们有帮助的插件，同时本文将会持续进行更新。如果大家发现有其他野很好用的插件，也欢迎参照下面的格式，在评论中进行回复反馈。<br> <a id="more"></a> </p>
 <h2 id="一、通用插件">一、通用插件</h2><p><strong> 1、Embeddable Build Status Icon </strong><br>链接：<a href="https://ci.jenkins-ci.org/job/lib-jira-api/badge/" target="_blank" rel="external">https://ci.jenkins-ci.org/job/lib-jira-api/badge/</a> | <a href="https://wiki.jenkins-ci.org/display/JENKINS/Embeddable+Build+Status+Plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Embeddable+Build+Status+Plugin</a><br>作用：通过简单的方式，将Job最近一次构建（Build）的状态展现出来  </p>
@@ -35,6 +35,7 @@
 <p><strong> 11、Role-based Authorization Strategy </strong><br>链接：<a href="https://wiki.jenkins-ci.org/display/JENKINS/Role+Strategy+Plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Role+Strategy+Plugin</a><br>作用：基于角色的的用户权限控制  </p>
 <h2 id="二、Android常用插件">二、Android常用插件</h2><p><strong> 1、Android Device connector plugin </strong><br>链接：<a href="https://github.com/xfreebird/android-device-connector-plugin" target="_blank" rel="external">https://github.com/xfreebird/android-device-connector-plugin</a> | <a href="https://wiki.jenkins-ci.org/display/JENKINS/Android+Device+connector+plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Android+Device+connector+plugin</a><br>作用：展现连接到master和slave上的安卓设备</p>
 <p>三、IOS 常用插件<br><strong> 1、IOS Device connector plugin </strong><br>链接：<a href="https://wiki.jenkins-ci.org/display/JENKINS/iOS+Device+Connector+Plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/iOS+Device+Connector+Plugin</a><br>作用：展现连接到master和slave上的IOS设备</p>
+<p><br><br></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p><img src="/assets/blog_img/jenkins-useful-plugins/jenkins-logo.png" alt="Jenkins Logo"></p>
