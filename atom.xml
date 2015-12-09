@@ -4,7 +4,7 @@
   <subtitle><![CDATA[挑战人生无极限，攀登人生更高峰]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiaoxuetu.github.io/"/>
-  <updated>2015-11-28T17:18:55.000Z</updated>
+  <updated>2015-12-09T16:43:30.000Z</updated>
   <id>http://xiaoxuetu.github.io/</id>
   
   <author>
@@ -13,6 +13,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Jenkins常用插件说明(持续更新)]]></title>
+    <link href="http://xiaoxuetu.github.io/2015/12/10/jenkins-useful-plugins/"/>
+    <id>http://xiaoxuetu.github.io/2015/12/10/jenkins-useful-plugins/</id>
+    <published>2015-12-09T16:33:27.000Z</published>
+    <updated>2015-12-09T16:43:30.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/assets/blog_img/jenkins-useful-plugins/jenkins-logo.png" alt="Jenkins Logo"></p>
+<p>本文主要记录在学习以及使用Jenkins过程中常用的对我们有帮助的插件，同时本文将会持续进行更新。如果大家发现有其他野很好用的插件，也欢迎参照下面的格式，在评论中进行回复反馈。<br> <a id="more"></a> </p>
+<h2 id="一、通用插件">一、通用插件</h2><p><strong> 1、Embeddable Build Status Icon </strong><br>链接：<a href="https://ci.jenkins-ci.org/job/lib-jira-api/badge/" target="_blank" rel="external">https://ci.jenkins-ci.org/job/lib-jira-api/badge/</a> | <a href="https://wiki.jenkins-ci.org/display/JENKINS/Embeddable+Build+Status+Plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Embeddable+Build+Status+Plugin</a><br>作用：通过简单的方式，将Job最近一次构建（Build）的状态展现出来  </p>
+<p><strong> 2、 Windows Exe Runner Plugin </strong><br>链接：<a href="https://wiki.jenkins-ci.org/display/JENKINS/Windows+Exe+Runner+Plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Windows+Exe+Runner+Plugin</a><br>作用：该插件用于在下发相关的exe文件到slave机器上之后执行，安装该插件之后，在jenkins服务器的”系统管理”-“系统设置”如下显示，注意目录为slave机器上的绝对路径</p>
+<p><strong> 3、Copy To Slave Plugin </strong><br>链接：<a href="https://wiki.jenkins-ci.org/display/JENKINS/Copy+To+Slave+Plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Copy+To+Slave+Plugin</a><br>作用：每次构建的时候从Master上把文件复制到具体Job的工作空间</p>
+<p><strong> 4、Email Extension Plugin </strong><br>链接：<a href="https://wiki.jenkins-ci.org/display/JENKINS/Email-ext+plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Email-ext+plugin</a><br>作用：用于替换Jenkins自带的邮件发送，更加的强大</p>
+<p><strong> 5、Artifact QR Code Plugin </strong><br>链接：<a href="https://github.com/jessicaaustin/artifact-qr-code-plugin" target="_blank" rel="external">https://github.com/jessicaaustin/artifact-qr-code-plugin</a><br>作用：用于展现手机上来的二维码</p>
+<p><strong> 6、Copy Artifact Plugin </strong><br>链接：<a href="https://wiki.jenkins-ci.org/display/JENKINS/Copy+Artifact+Plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Copy+Artifact+Plugin</a><br>作用：用于从另外一个Project复制收集物到当前的Build</p>
+<p><strong> 7、Distributed Workspace Clean plugin </strong><br>链接：<a href="https://wiki.jenkins-ci.org/display/JENKINS/Distributed+Workspace+Clean+plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Distributed+Workspace+Clean+plugin</a><br>作用：用于清理该Project在每个Slave上的空间</p>
+<p><strong> 8、HTML Publisher plugin </strong><br>链接：<a href="http://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin" target="_blank" rel="external">http://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin</a><br>作用：用于发布Html文件</p>
+<p><strong> 9、Slave SetupPlugin </strong><br>链接：<a href="http://wiki.jenkins-ci.org/display/JENKINS/Slave+Setup+Plugin" target="_blank" rel="external">http://wiki.jenkins-ci.org/display/JENKINS/Slave+Setup+Plugin</a><br>作用：在Slave启用前从master复制文件到slave中或者运行脚本</p>
+<p><strong> 10、ThinBackup </strong><br>链接：<a href="https://wiki.jenkins-ci.org/display/JENKINS/thinBackup" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/thinBackup</a><br>作用：用于对master的工作目录进行定时的备份，只能备份到当前机器的其他目录</p>
+<p><strong> 11、Role-based Authorization Strategy </strong><br>链接：<a href="https://wiki.jenkins-ci.org/display/JENKINS/Role+Strategy+Plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Role+Strategy+Plugin</a><br>作用：基于角色的的用户权限控制  </p>
+<h2 id="二、Android常用插件">二、Android常用插件</h2><p><strong> 1、Android Device connector plugin </strong><br>链接：<a href="https://github.com/xfreebird/android-device-connector-plugin" target="_blank" rel="external">https://github.com/xfreebird/android-device-connector-plugin</a> | <a href="https://wiki.jenkins-ci.org/display/JENKINS/Android+Device+connector+plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Android+Device+connector+plugin</a><br>作用：展现连接到master和slave上的安卓设备</p>
+<p>三、IOS 常用插件<br><strong> 1、IOS Device connector plugin </strong><br>链接：<a href="https://wiki.jenkins-ci.org/display/JENKINS/iOS+Device+Connector+Plugin" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/iOS+Device+Connector+Plugin</a><br>作用：展现连接到master和slave上的IOS设备</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/assets/blog_img/jenkins-useful-plugins/jenkins-logo.png" alt="Jenkins Logo"></p>
+<p>本文主要记录在学习以及使用Jenkins过程中常用的对我们有帮助的插件，同时本文将会持续进行更新。如果大家发现有其他野很好用的插件，也欢迎参照下面的格式，在评论中进行回复反馈。<br>]]>
+    
+    </summary>
+    
+      <category term="Jenkins" scheme="http://xiaoxuetu.github.io/tags/Jenkins/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Java基础类型总结]]></title>

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xiaoxuetu.github.io/2015/12/10/jenkins-useful-plugins/</loc>
+    <lastmod>2015-12-09T16:43:30.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://xiaoxuetu.github.io/2015/08/31/hexo-guide/</loc>
     <lastmod>2015-12-09T16:29:37.000Z</lastmod>
   </url>
